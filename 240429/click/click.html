@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div id="white"></div>
+      <div id="black"></div>
+      <div id="colorful"></div>
+    </div>
+  </div>
+  <script>
+    let root = document.getElementById('root');
+    let white = root.children[0].children[0];
+    let black = root.children[0].children[1];
+    let coloful = root.children[0].children[2];
+    console.dir(root, white, black); // 이거 왜 root만 나옴..?  
+    console.log(root, white, black);
+    white.innerHTML = 'bright';
+    white.style.width = '300px';
+    white.style.height = '300px';
+    white.style.display = 'flex';
+    white.style.border = '1px solid rgb(10, 10, 10)'
+    white.style.justifyContent = 'center'
+    white.style.alignItems = 'center'
+    white.style.backgroundColor = 'rgb(235, 235, 235)'
+    white.style.color = 'rgb(10, 10, 10)'
+
+    black.innerHTML = 'dark';
+    black.style.width = '300px';
+    black.style.height = '300px';
+    black.style.display = 'flex';
+    black.style.border = '1px solid rgb(235, 235, 235)'
+    black.style.justifyContent = 'center'
+    black.style.alignItems = 'center'
+    black.style.backgroundColor = 'rgb(10, 10, 10)';
+    black.style.color = 'rgb(235, 235, 235)';
+    // 자스로 처리하면 전부다 인라인 스타일로 붙던데 이유가 뭘까?
+    // 함수를 어디서 봤나 했더니 SCSS에서 mixin이 함수랑 다를게 뭐지 물론 mixin은 매개변수만 이용한거지만 아하!
+
+    colorful.innerHTML = 'colorful';
+    colorful.style.width = '300px';
+    colorful.style.height = '300px';
+    colorful.style.display = 'flex';
+    colorful.style.border = '1px solid rgb(235, 235, 235)'
+    colorful.style.justifyContent = 'center'
+    colorful.style.alignItems = 'center'
+    colorful.style.backgroundColor = 'red';
+    colorful.style.color = 'rgb(235, 235, 235)';
+
+
+
+    // 1. white를 클릭하면 사라지게 해줘.
+    // 2. black을 클릭하면 white를 나타나게 해줘.
+    // 이벤트 : 어떤일이 일어나는, 돌발적인 상황을 이야기한다.
+    // 이벤트 : 유저가 직접 제어할때가 많음 이거 내가 정말로 배우고 싶었던 거잖아? 상호작용의 시작점.
+    // DOM API의 addEventListener() Method를 사용하는 방법을 소개.
+
+    function whiteControl() {
+      white.style.display = 'none'; // 화이트의 스타일중에 디스플레이를 none으로 해줘 <- 없애줘. none을 찾아보도록하자. 
+    }
+
+    function blackControl() {
+      white.style.display = 'flex';
+    }
+    
+    var x = 1;
+    function colorfulControl(){
+      // let cfsb = colorful.style; // background까지 넣으면 안됨.
+      if(colorful.style.backgroundColor === 'red'){
+        colorful.style.backgroundColor = 'blue';
+      } else if (colorful.style.backgroundColor === 'blue') {
+        colorful.style.backgroundColor = 'green';
+      } else if (colorful.style.backgroundColor === 'green') {
+        colorful.style.backgroundColor = 'cadetblue';
+      } else if (colorful.style.backgroundColor === 'cadetblue'){
+        colorful.style.backgroundColor ='salmon';
+      } else if (colorful.style.backgroundColor === 'salmon') {
+        colorful.style.backgroundColor = 'violet';
+      } else {
+        colorful.style.backgroundColor = 'red';
+        colorful.innerHTML = x + '바퀴 돌았습니다.';
+        x ++;
+      }
+    }
+
+    // white에 이벤트를 추가할게 (클릭하면! 이 함수를 실행해줘)
+    // addEventListener('이벤트 타입 click resize등등', 함수자리)
+    white.addEventListener('click', whiteControl);  // 비유하자면 장바구니 지우기
+    black.addEventListener('click', blackControl);  // 일단은 디스플레이 값을 복구 시킨거일 뿐인데 다른 방법은 없을까?
+    colorful.addEventListener('click', colorfulControl);
+
+    // 해결할 것 후에 클로저를 사용해서 클로저로 지역변수를 증가시켜보자.
+    // 강사님이 알려주신 방법은 내가 아직 이해를 못했다 한번 더 생각하거나 물어보도록 하자.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노가다지양</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const studentNames = [
+      "구하림",
+      "김보미",
+      "김수현",
+      "김정수",
+      "문혜림",
+      "배성빈",
+      "백지원",
+      "송이현",
+      "신지윤",
+      "유으뜸",
+      "유호영",
+      "이연승",
+      "이재영",
+      "이종수",
+      "임유진",
+      "정호연",
+      "조우식",
+      "조자연",
+      "최유진",
+      "황재민"
+    ]
+    console.log(studentNames);
+    // 배열 확인
+    console.log(studentNames.length); 
+    // 배열 legnth값 확인
+    // 확인결과 문제 없음.
+    
+    const root = document.getElementById('root');
+    // 변수를 선언할게 문서안에 Id가 문자열로 'root'인 애를 찾아서 root에 할당해줘
+    const ul = document.createElement('ul');
+    //  변수를 선언할게 ul에 문서안에서 ul을 만들어서 할당해줘
+    
+
+    
+    root.appendChild(ul);
+    // 루트에 ul에 할당된 변수를 자식으로 붙여줘
+
+
+
+    // 함수를 하나 만들꺼야! 이름은 listItem이고 매개변수로는 a를 사용할게.
+    function listItem(a){
+      let li = document.createElement('li');
+      // 지역변수로 li를 선언할게 문서에서 li라는 요소를 만들어서 할당해줘.
+      li.textContent = studentNames[a];
+      // li의 textContent라는 이름을 가지고있는 어튜리뷰트노드에 값으로 객체배열 studentNames인덱스 순서 매개변수 a번째의 값을 할당할게
+      ul.appendChild(li);
+      // ul에 덧붙여줘 무엇을? li에 할당된 값을 덧붙여줘.
+    }
+
+    // 컴퓨터야 일해라! 먼저 지역변수를 하나 선언한다. i = 0;이야 이 제어문이 진행될동안만 기억하면 되. i가 객체배열인 studentNames의 length값보다 작다면,
+    // 내가 만든 실행문을 실행해줘, 실행문은 함수 listItem이야. 매개변수로는 아까 선언한 지역변수 i를 집어넣었어.
+    // 한번 실행했으면 i의 값을 1더해서 조건이 false가 될 때까지 반복해.
+    for(let i = 0; i < studentNames.length; i++) {
+      listItem(i);
+    }
+
+    let num1 = 0;
+    let num2 = 0;
+    let num3 = 0;
+    let num4 = 0;
+    let num5 = 0;
+    let num6 = 0;
+    let num7 = 0;
+    let num8 = 0;
+    let num9 = 0;
+    let num10 = 0;
+    let num11 = 0;
+    let num12 = 0;
+    let num13 = 0;
+    let num14 = 0;
+    let num15 = 0;
+    let num16 = 0;
+    let num17 = 0;
+    let num18 = 0;
+    let num19 = 0;
+    let num20 = 0;
+    let mode = true;
+    
+    function changeR1(){
+      if(mode === true){
+        ul.children[0].style.color = 'red';
+        mode = false;
+        num1++;
+        p.textContent = ul.children[0].textContent + `를${num1}번 클릭하였습니다.`;
+      } else {
+        ul.children[0].style.color = '';
+        mode = true;
+        num1++;
+        p.textContent = ul.children[0].textContent + `를${num1}번 클릭하였습니다.`;
+      }
+    }
+    
+    function changeR2(){
+      if(mode === true){
+        ul.children[1].style.color = 'red';
+        mode = false;
+        num2++;
+        p.textContent = ul.children[1].textContent + `를${num2}번 클릭하였습니다.`;
+      } else {
+        ul.children[1].style.color = '';
+        mode = true;
+        num2++;
+        p.textContent = ul.children[1].textContent + `를${num2}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR3(){
+      if(mode === true){
+        ul.children[2].style.color = 'red';
+        mode = false;
+        num3++;
+        p.textContent = ul.children[2].textContent + `를${num3}번 클릭하였습니다.`;
+      } else {
+        ul.children[2].style.color = '';
+        mode = true;
+        num3++;
+        p.textContent = ul.children[2].textContent + `를${num3}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR4(){
+      if(mode === true){
+        ul.children[3].style.color = 'red';
+        mode = false;
+        num4++;
+        p.textContent = ul.children[3].textContent + `를${num4}번 클릭하였습니다.`;
+      } else {
+        ul.children[3].style.color = '';
+        mode = true;
+        num4++;
+        p.textContent = ul.children[3].textContent + `를${num4}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR5(){
+      if(mode === true){
+        ul.children[4].style.color = 'red';
+        mode = false;
+        num5++;
+        p.textContent = ul.children[4].textContent + `를${num5}번 클릭하였습니다.`;
+      } else {
+        ul.children[4].style.color = '';
+        mode = true;
+        num5++;
+        p.textContent = ul.children[4].textContent + `를${num5}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR6(){
+      if(mode === true){
+        ul.children[5].style.color = 'red';
+        mode = false;
+        num6++;
+        p.textContent = ul.children[5].textContent + `를${num6}번 클릭하였습니다.`;
+      } else {
+        ul.children[5].style.color = '';
+        mode = true;
+        num6++;
+        p.textContent = ul.children[5].textContent + `를${num6}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR7(){
+      if(mode === true){
+        ul.children[6].style.color = 'red';
+        mode = false;
+        num7++;
+        p.textContent = ul.children[6].textContent + `를${num7}번 클릭하였습니다.`;
+      } else {
+        ul.children[6].style.color = '';
+        mode = true;
+        num7++;
+        p.textContent = ul.children[6].textContent + `를${num7}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR8(){
+      if(mode === true){
+        ul.children[7].style.color = 'red';
+        mode = false;
+        num8++;
+        p.textContent = ul.children[7].textContent + `를${num8}번 클릭하였습니다.`;
+      } else {
+        ul.children[7].style.color = '';
+        mode = true;
+        num8++;
+        p.textContent = ul.children[7].textContent + `를${num8}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR9(){
+      if(mode === true){
+        ul.children[8].style.color = 'red';
+        mode = false;
+        num9++;
+        p.textContent = ul.children[8].textContent + `를${num9}번 클릭하였습니다.`;
+      } else {
+        ul.children[8].style.color = '';
+        mode = true;
+        num9++;
+        p.textContent = ul.children[8].textContent + `를${num9}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR10(){
+      if(mode === true){
+        ul.children[9].style.color = 'red';
+        mode = false;
+        num10++;
+        p.textContent = ul.children[9].textContent + `를${num10}번 클릭하였습니다.`;
+      } else {
+        ul.children[9].style.color = '';
+        mode = true;
+        num10++;
+        p.textContent = ul.children[9].textContent + `를${num10}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR11(){
+      if(mode === true){
+        ul.children[10].style.color = 'red';
+        mode = false;
+        num11++;
+        p.textContent = ul.children[10].textContent + `를${num11}번 클릭하였습니다.`;
+      } else {
+        ul.children[10].style.color = '';
+        mode = true;
+        num11++;
+        p.textContent = ul.children[10].textContent + `를${num11}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR12(){
+      if(mode === true){
+        ul.children[11].style.color = 'red';
+        mode = false;
+        num12++;
+        p.textContent = ul.children[11].textContent + `를${num12}번 클릭하였습니다.`;
+      } else {
+        ul.children[11].style.color = '';
+        mode = true;
+        num12++;
+        p.textContent = ul.children[11].textContent + `를${num12}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR13(){
+      if(mode === true){
+        ul.children[12].style.color = 'red';
+        mode = false;
+        num13++;
+        p.textContent = ul.children[12].textContent + `를${num13}번 클릭하였습니다.`;
+      } else {
+        ul.children[12].style.color = '';
+        mode = true;
+        num13++;
+        p.textContent = ul.children[12].textContent + `를${num13}번 클릭하였습니다.`;
+      }
+    }12
+    function changeR14(){
+      if(mode === true){
+        ul.children[13].style.color = 'red';
+        mode = false;
+        num14++;
+        p.textContent = ul.children[13].textContent + `를${num14}번 클릭하였습니다.`;
+      } else {
+        ul.children[13].style.color = '';
+        mode = true;
+        num14++;
+        p.textContent = ul.children[13].textContent + `를${num14}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR15(){
+      if(mode === true){
+        ul.children[14].style.color = 'red';
+        mode = false;
+        num15++;
+        p.textContent = ul.children[14].textContent + `를${num15}번 클릭하였습니다.`;
+      } else {
+        ul.children[14].style.color = '';
+        mode = true;
+        num15++;
+        p.textContent = ul.children[14].textContent + `를${num15}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR16(){
+      if(mode === true){
+        ul.children[15].style.color = 'red';
+        mode = false;
+        num16++;
+        p.textContent = ul.children[15].textContent + `를${num16}번 클릭하였습니다.`;
+      } else {
+        ul.children[15].style.color = '';
+        mode = true;
+        num16++;
+        p.textContent = ul.children[15].textContent + `를${num16}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR17(){
+      if(mode === true){
+        ul.children[16].style.color = 'red';
+        mode = false;
+        num17++;
+        p.textContent = ul.children[16].textContent + `를${num17}번 클릭하였습니다.`;
+      } else {
+        ul.children[16].style.color = '';
+        mode = true;
+        num17++;
+        p.textContent = ul.children[16].textContent + `를${num17}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR18(){
+      if(mode === true){
+        ul.children[17].style.color = 'red';
+        mode = false;
+        num18++;
+        p.textContent = ul.children[17].textContent + `를${num18}번 클릭하였습니다.`;
+      } else {
+        ul.children[17].style.color = '';
+        mode = true;
+        num18++;
+        p.textContent = ul.children[17].textContent + `를${num18}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR19(){
+      if(mode === true){
+        ul.children[18].style.color = 'red';
+        mode = false;
+        num19++;
+        p.textContent = ul.children[18].textContent + `를${num19}번 클릭하였습니다.`;
+      } else {
+        ul.children[18].style.color = '';
+        mode = true;
+        num19++;
+        p.textContent = ul.children[18].textContent + `를${num19}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR20(){
+      if(mode === true){
+        ul.children[19].style.color = 'red';
+        mode = false;
+        num20++;
+        p.textContent = ul.children[19].textContent + `를${num20}번 클릭하였습니다.`;
+      } else {
+        ul.children[19].style.color = '';
+        mode = true;
+        num20++;
+        p.textContent = ul.children[19].textContent + `를${num20}번 클릭하였습니다.`;
+      }
+    }
+
+    function changeR1(){
+      if(mode === true){
+        ul.children[0].style.color = 'red';
+        mode = false;
+        num1++;
+        p.textContent = ul.children[0].textContent + `를${num1}번 클릭하였습니다.`;
+      } else {
+        ul.children[0].style.color = '';
+        mode = true;
+        num1++;
+        p.textContent = ul.children[0].textContent + `를${num1}번 클릭하였습니다.`;
+      }
+    }
+
+    function count1(){
+      if(num1 === 10){
+        alert('그만 눌러요!');
+        ul.children[0].textContent = '';
+        ul.children[0].style.color = '';
+        ul.children[0].removeEventListener('click',changeR1);
+      }
+    }
+    function count2(){
+      if(num2 === 10){
+        alert('그만 눌러요!');
+        ul.children[1].textContent = '';
+        ul.children[1].style.color = '';
+        ul.children[1].removeEventListener('click',changeR2);
+      }
+    }
+    function count3(){
+      if(num3 === 10){
+        alert('그만 눌러요!');
+        ul.children[2].textContent = '';
+        ul.children[2].style.color = '';
+        ul.children[2].removeEventListener('click',changeR3);
+      }
+    }
+    function count4(){
+      if(num4 === 10){
+        alert('그만 눌러요!');
+        num4++;
+        ul.children[3].textContent = '';
+        ul.children[3].style.color = '';
+        ul.children[3].removeEventListener('click',changeR4);
+      }
+    }
+    function count5(){
+      if(num5 === 10){
+        alert('그만 눌러요!');
+        ul.children[4].textContent = '';
+        ul.children[4].style.color = '';
+        ul.children[4].removeEventListener('click',changeR5);
+      }
+    }
+    function count6(){
+      if(num6 === 10){
+        alert('그만 눌러요!');
+        ul.children[5].textContent = '';
+        ul.children[5].style.color = '';
+        ul.children[5].removeEventListener('click',changeR6);
+      }
+    }
+    function count7(){
+      if(num7 === 10){
+        alert('그만 눌러요!');
+        ul.children[6].textContent = '';
+        ul.children[6].style.color = '';
+        ul.children[6].removeEventListener('click',changeR7);
+      }
+    }
+    function count8(){
+      if(num8 === 10){
+        alert('그만 눌러요!');
+        ul.children[7].textContent = '';
+        ul.children[7].style.color = '';
+        ul.children[7].removeEventListener('click',changeR8);
+      }
+    }
+    function count9(){
+      if(num9 === 10){
+        alert('그만 눌러요!');
+        ul.children[8].textContent = '';
+        ul.children[8].style.color = '';
+        ul.children[8].removeEventListener('click',changeR9);
+      }
+    }
+    function count10(){
+      if(num10 === 10){
+        alert('그만 눌러요!');
+        ul.children[9].textContent = '';
+        ul.children[9].style.color = '';
+        ul.children[9].removeEventListener('click',changeR10);
+      }
+    }
+    function count11(){
+      if(num11 === 10){
+        alert('그만 눌러요!');
+        ul.children[10].textContent = '';
+        ul.children[10].style.color = '';
+        ul.children[10].removeEventListener('click',changeR11);
+      }
+    }
+    function count12(){
+      if(num12 === 10){
+        alert('그만 눌러요!');
+        ul.children[11].textContent = '';
+        ul.children[11].style.color = '';
+        ul.children[11].removeEventListener('click',changeR12);
+      }
+    }
+    function count13(){
+      if(num13 === 10){
+        alert('그만 눌러요!');
+        ul.children[12].textContent = '';
+        ul.children[12].style.color = '';
+        ul.children[12].removeEventListener('click',changeR13);
+      }
+    }
+    function count14(){
+      if(num14 === 10){
+        alert('그만 눌러요!');
+        ul.children[13].textContent = '';
+        ul.children[13].style.color = '';
+        ul.children[13].removeEventListener('click',changeR14);
+      }
+    }
+    function count15(){
+      if(num15 === 10){
+        alert('그만 눌러요!');
+        ul.children[14].textContent = '';
+        ul.children[14].style.color = '';
+        ul.children[14].removeEventListener('click',changeR15);
+      }
+    }
+    function count16(){
+      if(num16 === 10){
+        alert('그만 눌러요!');
+        ul.children[15].textContent = '';
+        ul.children[15].style.color = '';
+        ul.children[15].removeEventListener('click',changeR16);
+      }
+    }
+    function count17(){
+      if(num17 === 10){
+        alert('그만 눌러요!');
+        ul.children[16].textContent = '';
+        ul.children[16].style.color = '';
+        ul.children[16].removeEventListener('click',changeR17);
+      }
+    }
+    function count18(){
+      if(num18 === 10){
+        alert('그만 눌러요!');
+        ul.children[17].textContent = '';
+        ul.children[17].style.color = '';
+        ul.children[17].removeEventListener('click',changeR18);
+      }
+    }
+    function count19(){
+      if(num19 === 10){
+        alert('그만 눌러요!');
+        ul.children[18].textContent = '';
+        ul.children[18].style.color = '';
+        ul.children[18].removeEventListener('click',changeR19);
+      }
+    }
+    function count20(){
+      if(num20 === 10){
+        alert('그만 눌러요!');
+        ul.children[19].textContent = '';
+        ul.children[19].style.color = '';
+        ul.children[19].removeEventListener('click',changeR20);
+      }
+    }
+
+
+
+    ul.children[0].addEventListener('click',changeR1);
+    ul.children[1].addEventListener('click',changeR2);
+    ul.children[2].addEventListener('click',changeR3);
+    ul.children[3].addEventListener('click',changeR4);
+    ul.children[4].addEventListener('click',changeR5);
+    ul.children[5].addEventListener('click',changeR6);
+    ul.children[6].addEventListener('click',changeR7);
+    ul.children[7].addEventListener('click',changeR8);
+    ul.children[8].addEventListener('click',changeR9);
+    ul.children[9].addEventListener('click',changeR10);
+    ul.children[10].addEventListener('click',changeR11);
+    ul.children[11].addEventListener('click',changeR12);
+    ul.children[12].addEventListener('click',changeR13);
+    ul.children[13].addEventListener('click',changeR14);
+    ul.children[14].addEventListener('click',changeR15);
+    ul.children[15].addEventListener('click',changeR16);
+    ul.children[16].addEventListener('click',changeR17);
+    ul.children[17].addEventListener('click',changeR18);
+    ul.children[18].addEventListener('click',changeR19);
+    ul.children[19].addEventListener('click',changeR20);
+
+    ul.children[0].addEventListener('click',count1);
+    ul.children[1].addEventListener('click',count2);
+    ul.children[2].addEventListener('click',count3);
+    ul.children[3].addEventListener('click',count4);
+    ul.children[4].addEventListener('click',count5);
+    ul.children[5].addEventListener('click',count6);
+    ul.children[6].addEventListener('click',count7);
+    ul.children[7].addEventListener('click',count8);
+    ul.children[8].addEventListener('click',count9);
+    ul.children[9].addEventListener('click',count10);
+    ul.children[10].addEventListener('click',count11);
+    ul.children[11].addEventListener('click',count12);
+    ul.children[12].addEventListener('click',count13);
+    ul.children[13].addEventListener('click',count14);
+    ul.children[14].addEventListener('click',count15);
+    ul.children[15].addEventListener('click',count16);
+    ul.children[16].addEventListener('click',count17);
+    ul.children[17].addEventListener('click',count18);
+    ul.children[18].addEventListener('click',count19);
+    ul.children[19].addEventListener('click',count20);
+    
+    let p = document.createElement('p');
+    root.appendChild(p);
+
+    // 이벤트리스너가 삽입될 요소를 지정하는 방법은 없을 까?
+    // 이것을 사용하려면 클로저가 필요할 것 같다.
+    // 지역변수 내에서 저장될 것이 필요하다.
+    // addEventListener로 사용할 함수는 매개변수를 사용할 수 없다.
+    // 아닌가? 찾아봐야 하는게 아닐까?
+    // 매개변수를 사용하는 방법이 있을지도 모른다.
+    // 가장 쉬운 방법은 이벤트리스너가 삽입되는 요소를 지정하여 그 요소의 스타일의 칼라를 바꾸는게 좋을 것 같은데
+    // this가 그 답이 될 수 있을까? 
+  </script>
+</body>
+</html>

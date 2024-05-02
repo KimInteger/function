@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>privateprac2</title>
+</head>
+<body>
+  <p id="change">124124</p>
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <button onclick="change('red')">red</button>
+  <!-- ! 만들어둔 change()함수 실행할게! 매개변수는 'red'야! -->
+  <button onclick="change('salmon')">salmon</button>
+  <!-- ! 만들어둔 change()함수 실행할게! 매개변수는 'salmon'이야! -->
+  <button onclick="change('return')">return</button>
+  <!-- ! 만들어둔 change()함수 실행할게! 매개변수는 'return'야! -->
+  <script>
+    function c(first,second) {
+      if(typeof(first) !== typeof(1)){
+        console.log("메롱");
+      }
+      console.log(first+second);
+    }
+    c('야호',2);
+
+    function d(first,second,third) {
+      if(first === 1){
+        console.log('1이래요');
+      } else {
+        console.log('1이 아니라면? 첫번째 값은!'+first+"야!")
+      }
+      if(second === 1){
+        console.log('두번째도 1이래요!');
+      } else {
+        console.log("두번째는"+second+"야.")
+      }
+      if(third === 1) {
+        console.log('세번째도 1이래요!')
+      }else {
+        console.log(`세번째는 ${third}야!`)
+      }
+      console.log(first + second + third);
+    }
+    d(4,12,3);
+    // 와 if를 중첩해서 쓸 수 있어!
+    // 이거 문제는 안생기나?
+
+    var find = document.getElementsByTagName('p');
+
+
+    /*
+    함수 만들께! change란 함수 만들꺼야 (매개변수로 newcolor) {
+      실행할게! 뭘?
+      반복문을 i = 0이고 i 가 4보다 작을때 실행해줘
+      find에 인덱스순서가 i번인 요소의 스타일중에 색상을 매개변수의 색으로 바꿔줘
+      근데 만약 매개변수가 'red'면 폰트사이즈를 80으로해줘
+      'salmon'이면 60 으로해주고
+      둘다 아니면 색상은 검은색으로 바꾸고, 사이즈는 18px로해줘
+      실행문을 실행했으면 i를 +1해서 다시 조건에 맞춰줘
+    }
+
+    */
+    function change(newcolor){
+      for(i=0;i<4;i++){
+        find[i].style.color = newcolor;
+        if(newcolor === 'red') {
+          find[i].style.fontSize = '80px';
+        } else if (newcolor === 'salmon') {
+          find[i].style.fontSize = '60px';
+        } else {
+            find[i].style.color = 'black'
+            find[i].style.fontSize = '18px'
+        }
+      }
+    }
+    // console.dir(find);  
+    // 겟 엘리멘트 태그네임으로 찾으면 배열의 형식으로 찾는다.
+
+    // var p = document.getElementById('change');
+    // 겟 엘리멘트 아이디로 찾으면 원형을 가져온다.
+    
+    console.dir(p);
+
+
+  </script>
+</body>
+</html>

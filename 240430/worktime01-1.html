@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- ! 첫번째 미션 root에 ul을 만들어주고 그 자식으로 li도 넣어주세요. -->
+  <script>
+    const root = document.getElementById('root');
+    // 변수 root를 선언할게 root에다가 문서에서 Id가 문자열 'root'인 것을 찾아서 할당해줘
+    const ul = document.createElement('ul');
+    // 변수 ul를 선언할게 ul에다가 문서에서 Id가 문자열 'ul'인 것을 찾아서 할당해줘
+    // const li = document.createElement('li');
+    // 변수 root를 선언할게 li에다가 문서에서 Id가 문자열 'li'인 것을 찾아서 할당해줘
+    // 여기서 선언한 변수는 전역변수가 된다. 그리고 전역변수는 하나만 존재할 수 있기 때문에, 여러개를 만들어낼 수 가 없다.
+    // 그래서 함수에 지역변수로 제어문을 통해 재생성함으로써 여러개의 li태그를 만들어낼 수 있었다.
+
+    var names = [
+      "구하림",
+      "김보미",
+      "김수현",
+      "김정수",
+      "문혜림",
+      "배성빈",
+      "백지원",
+      "송이현",
+      "신지윤",
+      "유으뜸",
+      "유호영",
+      "이연승",
+      "이재영",
+      "이종수",
+      "임유진",
+      "정호연",
+      "조우식",
+      "조자연",
+      "최유진",
+      "황재민"
+    ];
+    console.log(names.length);
+    // 콘솔에 기록해줘 무엇을? names의 길이값을 기록해줘 // 20
+    
+    root.appendChild(ul);
+    // root라는 변수에 자식요소로 변수ul에 할당한 값을 붙여줘
+
+    // 내가 이해한 것은 전역변수로서 지정하면 그 값이 계속해서 유지되기 때문에, 지역변수로 휘발성을 갖게한다.
+    // 그러면 만들어지고 지워지고를 반복하기 때문에, 연속해서 새로운 태그를 추가할 수 있다.
+    // 그렇다면 저거는 같은걸 반복하는게 아니라, 계속해서 새로운 변수를 생성해서 할당하고 시작하는것이라고 할 수 있다.
+    // 이것을 활용해서 무엇을 만들 수 있을까?
+    // 게임으로 생각하면 무엇이 있을까???????????????????
+    function plusli(a){
+      let li = document.createElement('li');
+      // 지역변수로 선언한다 . 문서에서 li라는 요소를 만들어서 li변수에 할당해줘
+      li.textContent = names[a];
+      // 변수 li의 textContent라는 어트리뷰트에 names[a]의 값을 할당해줘
+      ul.appendChild(li);
+      // ul의 자식으로 li를 덧붙여줘
+    }
+    for(let i = 0; i < names.length; i++){
+      plusli(i);
+      // 반복해줘 i = 0에서 시작하고, i는 names의 길이보다 작고, 실행문이 실행되면 i를 증가시켜줘.
+      // plusli(i)를 반복해줘
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice1</title>
+</head>
+<body>
+  <!-- ! 바디를 대신할 최상위 객체 -->
+  <div id="root">
+    <!-- ! onclick = "" 클릭이 되면 ""를 실행할거야. -->
+    <!-- ? JavaScript가 처음나왔을 때 쓰던 방식 Oldschool방식이다! -->
+      <h1 onclick="ramen()">저슷라이큐~맘마미아~!</h1>
+      <h1 onclick="liar()">Liar</h1>
+  </div>
+  <script>
+    let root = window.document.getElementById('root');
+    // console.log(root);
+    console.dir(root);
+    // console.log(root.children);
+    // console.log(root.children[0]);
+    // console.log(root.children[0].innerHTML);
+
+    // let h1 = window.document.getElementsByTagName('h1');
+    // console.dir(h1);
+    // h1.textContent = "김코사인"
+    // console.log(h1.textContent);
+    
+    // // 동적 할당
+    // root.children[0].style.color = 'red';
+    // root.children[0].style.backgroundColor = 'silver';
+    // root.children[0].innerHTML = "김인티저";
+    
+    /*
+    Teacher's answer;
+    let root = document.getElementById('root');
+    console.log(root.children[0]);
+    */
+    
+    function ramen() {
+      root.children[0].style.color = 'red';
+      root.children[0].style.backgroundColor = 'silver';
+      root.children[0].innerHTML = "김인티저";
+    }
+
+    function liar() {
+      root.children[1].style.color = 'white';
+      root.children[1].style.backgroundColor = 'red';
+      root.children[1].style.fontSize = '300px';
+      root.children[1].textContent = '거짓말쟁이';
+    }
+
+  </script>
+</body>
+</html>

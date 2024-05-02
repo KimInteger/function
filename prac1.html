@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>2</h1>
+      <p>1</p>
+    </div>
+    <script>
+      var obj = {};
+      obj.test = "김인티저";
+      window.console.log(obj["test"]);
+      
+      var names = [
+      "구하림",
+      "김보미",
+      "김수현",
+      "김정수",
+      "문혜림",
+      "배성빈",
+      "백지원",
+      "송이현",
+      "신지윤",
+      "유으뜸",
+      "유호영",
+      "이연승",
+      "이재영",
+      "이종수",
+      "임유진",
+      "정호연",
+      "조우식",
+      "조자연",
+      "최유진",
+      "황재민"
+    ];   // datatype 배열(array)
+
+      // 배열에 키의 이름이 length인 친구가 하나 잡힌다.
+      // 이 length는 길이 값인데 배열이 만들어지면 'key'로 length를 만들어준다. (남의 코드 - 룰) 이는 룰에 해당한다.
+
+      window.console.log(names);
+      window.console.log(names.length);
+      names[20] = "김인티저";
+      names[names.length] = "김인티저2";  // 네임의 키 렝스의 값을 넣는 거구나
+      // 배열의 길이에서 배열의 길이값 빼기 1 순번을 가져와줘.
+      // 어떤 배열이든 마지막 순번을 가져올 수 있다.
+      window.console.log(names[names.length-1]);
+      // 뭐지? 갑자기 마지막으로 추가한 김인티저 2가 0으로 갔다.
+      window.console.log(names);
+      // 배열의 무엇이든 간에 마지막을 구할 수 있다.
+      names[names.length-1] = "공욱재";
+      window.console.log(names);
+      window.console.log(names[names.length-1]);
+      // 배열의 무엇이든 중간을 구할 수 있다.
+      names[names.length/2] = "김인티저3";
+      window.console.log(names);
+      window.console.log(names[names.length/2]);
+      window.console.log(names[names.length/2-1]);
+      // 배열이 무엇이든간에 처음을 구할 수 있다.
+      window.console.log(names[0]);
+      names[names.length/2] = "이재영";
+      window.console.log(names[names.length/2]);
+
+      for(var i = 0; i < 2; i++) {
+        window.console.log(i);
+      }
+
+      window.console.log(typeof(i));
+
+      for(var j = 1; j <= 6; j++) {
+        for(var k = 1; k <= 6; k++){
+          if(j + k === 6) console.log(`[${j}, ${k}]`);
+        }
+      }
+
+      var h1 = document.getElementsByTagName('h1');
+      var p = document.getElementsByTagName('p');
+      window.console.log(h1);
+      window.console.log(p);
+
+      for (var l = 0.5; l <= 2.5; l++) {
+        window.console.log(l);
+      }
+
+
+
+
+
+    </script>
+  </body>
+</html>

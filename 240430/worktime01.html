@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">테스트</div>
+  <script>
+    const root = document.getElementById('root');
+    // 변수 선언할게! 문서에 있는 Id가 문자열 root인것을 찾아서 변수 root에 할당해줘
+    const h1 = document.createElement('h1');
+    // 문서에 문자열 h1인 요소를 만들어서 변수 h1에 할당해줘. 
+    // 특징 요소탭에는 전혀 h1태그의 존재가 없다.
+    // 만들어지기만 한 것이지 아직 문서에 쓰이진 않았다. 공간 어딘가에 만들어지기만 함.
+    // 이를 컴퓨터는 reading한다고 한다. 메모리에 넣어놓는다.
+    // h1이란 변수라는 저장소에 넣어두었을 뿐, 아직 사용하진 않았다. 
+    console.log(h1);
+    // 브라우저야 콘솔창에 h1을 해당해줘
+    document.body.appendChild(h1);
+    // 문서객체의 바디 객체에 마지막 자식으로 변수 h1을 덧붙여줘!
+    // appendChild는 DOMAPI중 하나로, 만들어져있는 남이 만든 함수. 외울 필요는 없다.
+    // 자식으로 추가할 수도 있구나! 라는 개념만 알고 있자.
+    // appendChild는 필요에 따라서는 안쓸 수도 있다.
+    root.appendChild(h1);
+    // 루트에 자식으로 변수 h1에 해당하는 것을 덧붙여줘
+    h1.textContent = '김인티저';
+    // h1의 textContent라는 어트리뷰트에 문자열 '김인티저'의 값을 할당해줘.
+    console.dir(h1);
+    console.dir(root);
+    h1.id = "child";
+    // h1의 id라는 이름을 가진 어트리뷰트노드에 'child'라는 값을 할당해줘.
+    console.dir(h1);
+    // 동적으로 추가하는 이유가 뭘까? 
+    // 제어, 이벤트효과등등
+    // 그냥 정적으로 박아버리면 눈에 보이는 것만 보이기 때문에 추가적인 현상은 만들어줄 수 없다.
+  </script>
+</body>
+</html>

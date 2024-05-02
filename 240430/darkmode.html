@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스위치</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    root.textContent = 'On';
+    root.style.color = 'black';
+    root.style.backgroundColor = '';
+    root.style.width = '100vw';
+    root.style.height = '100vh';
+    root.style.display = 'flex';
+    root.style.alignItems = 'center';
+    root.style.justifyContent = 'center';
+    root.style.fontSize = '10rem';
+
+
+    let mode = true;
+    
+    function changeMode() {
+      if(mode === true){
+        root.textContent = 'Off';
+        root.style.color = 'white';
+        root.style.backgroundColor = 'black';
+        root.style.width = '100vw';
+        root.style.height = '100vh';
+        root.style.display = 'flex';
+        root.style.alignItems = 'center';
+        root.style.justifyContent = 'center';
+        root.style.fontSize = '10rem';
+        mode = false;
+      } else {
+        root.textContent = 'On';
+      root.style.color = 'black';
+      root.style.backgroundColor = '';
+      root.style.width = '100vw';
+      root.style.height = '100vh';
+      root.style.display = 'flex';
+      root.style.alignItems = 'center';
+      root.style.justifyContent = 'center';
+      root.style.fontSize = '10rem';
+      mode = true;
+      }
+    }
+
+    root.addEventListener('click',changeMode);
+  </script>
+
+</body>
+</html>

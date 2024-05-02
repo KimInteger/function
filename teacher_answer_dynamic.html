@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      document.body.style.padding = 0;
+      document.body.style.margin = 0;
+
+      // root
+      const root = document.getElementById('root');
+      root.textContent = "연회색";
+      // nav
+      const nav = document.createElement('nav');
+      nav.textContent = "회색";
+      // root의 자식으로 붙임
+      root.appendChild(nav);
+      // div
+      const div = document.createElement('div');
+      div.textContent = "진회색";
+      // nav의 자식으로 붙임
+      nav.appendChild(div);
+
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+      root.style.backgroundColor = "#d9d9d9";
+
+      root.children[0].style.width = "50vw";
+      root.children[0].style.height = "100vh";
+      root.children[0].style.backgroundColor = "#b0b0b0";
+      root.children[0].style.position = "absolute";
+      root.children[0].style.zIndex = 1;
+
+      root.children[0].children[0].style.width = "100px";
+      root.children[0].children[0].style.height = "100px";
+      root.children[0].children[0].style.backgroundColor = "#808080";
+      root.children[0].children[0].style.margin = "50px";
+
+    </script>
+  </body>
+</html>

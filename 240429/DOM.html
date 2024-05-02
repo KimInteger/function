@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body > div > h1 {
+      color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1>김인티저</h1>
+  </div>
+  <script>
+    var root = document.getElementById('root');
+    console.dir(root);
+    // root.children[0].style.color = 'red';
+
+    var h1 = window.document.getElementsByTagName('h1');
+    // 브라우저에있는 문서안에 있는 방법!
+    // 내장되어 있기는 하지만, 쓰는 방법은 배워야한다.
+    console.dir(h1);
+    // h1[0].style.color = 'blue';
+    console.log(h1[0].style.color);
+    // 그냥 나중에 한놈이 적용됨.
+
+    // 만약 찾지 못했다면?
+    // 1. 자바스크립트에서 h1태그 스타일하는 방법 X
+    // 2. 자바스크립트를 통해서 문서 요소를 식별하는 방법 O <- 검색할 땐 이렇게
+
+    // 강사님의 선택
+    // 첫번째로 선택한 방법을 사용하셨다. 태그네임을 사용하니 배열로 잡힌다.
+    // 배열로 잡혔기 때문에, []배열 인덱스 순서를 꼭 넣어주어야 한다.
+    // 내가 사용한 get시리즈를 method(방법)이라고 한다. 
+  </script>
+</body>
+</html>

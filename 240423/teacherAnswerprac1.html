@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div>김수현</div>
+    <div>유호영</div>
+    <div>조자연</div>
+  </div>
+  <script>
+    // 절대 외우지 말것!
+
+    let root = window.document.getElementById('root'); 
+    window.console.log(root);
+    window.console.dir(root);
+    window.console.log(root);
+    window.console.dir(root);
+    // dir을 사용하여 children이란 객체를 찾아냈다면 일단 성공
+    console.dir(root.children); // 배열인 것을 확인 0번째를 보자!
+    console.dir(root.children[0]); // 0번째의 div를 확인! 김수현을 찾아보자!
+    window.console.log(root.children[0].innerHTML); // 김수현이 나왔다! 이게 뭐? body > div:nth-child(1) > div:nth-child(1) 이런식으로 찾았다.
+    // 자 여기까지 왔으면 절반은 성공한 것이다!
+    let moon = "바뀐 문혜림";
+    root.children[0].innerHTML = moon;
+    // 나는 root안의 children의 [0]번째의 innerHTML의 리터럴 값인 "김수현"에 변수 moon을 재대입했다. 재할당했다!
+    window.console.dir(root.children[0]);
+    root.children[1].innerHTML = "바뀐 김보미";  // 이번엔 그냥 문자열 값을 할당했다. 그래도 바뀐다! 뭘 넣어도 상관없다! 마크업이 아니다. 그냥 내가 하고싶은대로 하면 된다.
+    root.children[2].innerHTML = "바뀐 자연조";  
+    // 인덱스의 근거를 찾아내서 바꾼다.
+
+    /*
+    이 행위는 문서에 있는것을 2차적으로 동적으로 할당한 것이다.
+    디자이너는 하지 못한다. 
+    시사하는 바는 문서에 적힌게 '다'가 아니라는 것을 알 것
+    정적인 문서에 동적으로 값을 추가 혹은 변경할 수 있다는 것
+    selector - "관게 선택자, 순서 선택자"
+    => nth-child는 객체를 조회하는 연습을 시켰던 것이다.
+    */
+  
+    // let arr = ["배성빈", "신지윤", "김인티저"];
+    // window.console.log(arr);
+
+    // let arr1 = ["김사인", "김코사인", "김탄젠트"]
+    // for (let i = 0; i < arr.length; i++) {
+    //   arr[i] = arr1[i];
+    //   window.console.log(arr[i]);
+    // }
+
+    // window.console.log(arr);
+    // 이것은 나의 답이다.
+    // 새로운 배열을 하나 선언하여 초기화하고, 반복문을 사용하여 arr[i]의 값에 arr1[i]의 값을 대입하였다.
+
+    let arr = ["배성빈", "신지윤", "김인티저"];
+
+
+    for(var index = 0; index < root.children.length; index++) {
+      // 해석하자면 만약에 arr의 index번째 어디있는지는 아직 모르지만, "배성빈"이 있다면 "이종수"로 재할당해줘 
+      // if (arr[index] === "배성빈") {
+      //   arr[index] = "이종수";
+      // };
+      // 없으니까 바뀌지 않는다. 컴퓨터에게 판단을 시켰다! 컴퓨터는 찾았다! 근데 거기에 공욱재가 없네? 그럼 안바꿔야지.
+      // 이게 실행이 된 것이다. 사람으로는 할 수 없는 속도!
+      if (arr[index] === "공욱재") {
+        arr[index] = "이종수";
+      };
+      root.children[index].innerHTML = arr[index];
+      window.console.log(root.children[index]);
+    };
+
+  </script>
+</body>
+</html>

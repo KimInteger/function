@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var i = 0;
+    // setTimeout(()=> {
+    //   i++
+    // },1000);
+    // clearTimeout()
+
+    const timeoutId = setInterval(()=>{
+      console.log(i);
+      if(i++ === 10) clearInterval(timeoutId);
+    },1000);
+    // 이거 왜 100나옴?
+    // 이거 break취급인가?
+
+    var j = 0;
+    setTimeout(()=>{
+        j++
+      }, 1000);
+      clearTimeout();
+    
+  </script>
+</body>
+</html>

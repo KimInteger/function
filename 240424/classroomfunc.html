@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    선언한다! 이름은 전역변수(어디에서든 꺼내쓸 수 있음!) 값을 3으로 할당하고 초기화!
+    함수를 하나 만들꺼야 이름은 exampleFunction이고 (인수1,인수2)
+    이 함수는 어떻게 실행되나?
+    지역변수를 선언! 지역변수는 인수1+ 인수2 + 전역변수의 값을 대입할꺼야
+
+    반환해줘 지역변수의 값을
+    */
+    let globalVariable = 3;
+    function exampleFunction ( parameterOne, parameterTwo ) {
+      let localVarialbe = parameterOne + parameterTwo + globalVariable;
+      
+      return localVariable;
+      // 기본적으로 함수는 undefined를 반환하기 때문에 리턴으로 반환할 값을 지정해 주어야 한다.
+    }
+    console.log(localVariable);
+    console.log(exampleFunction( 1 , 2 )); 
+    // 6이 나오겠지?
+    
+  </script>
+</body>
+</html>

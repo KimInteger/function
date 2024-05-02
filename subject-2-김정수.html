@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subejct-2 김정수</title>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+  <script>
+    // body태그에 있는 id가 root인 태그를 가져온겁니다.
+    let root = document.getElementById('root');
+    // 사용할 리스트입니다.
+    const names = [
+      "구하림",
+      "김보미",
+      "김수현",
+      "김정수",
+      "문혜림",
+      "배성빈",
+      "백지원",
+      "송이현",
+      "신지윤",
+      "유으뜸",
+      "유호영",
+      "이연승",
+      "이재영",
+      "이종수",
+      "임유진",
+      "정호연",
+      "조우식",
+      "조자연",
+      "최유진",
+      "황재민",
+    ];
+
+    // 공통으로 들어가는 스타일부분입니다.
+    function public(){
+      // CSS의 전체선택자를 찾지못해서 바디의 스타일로 지정했습니다.
+      document.body.style.padding = 0
+      document.body.style.margin = 0
+      // css width와 height의 값을 보더를 포함해서 지정한 사이즈 내로 하겠다는 의미입니다. 300px을 지정하면 300px을 넘어서지 않습니다.
+      document.body.style.boxSizing = 'border-box';
+      // 넘치는 부분을 가린다는 의미입니다.
+      // 스크롤기능을 사용하고 싶으시면 scroll을 적으시면됩니다.
+      document.body.style.overflowX = 'hidden';
+      root.style.display = 'grid';
+      // 칸 사이사이에 간격을 주는 부분입니다.
+      root.style.gap = '1vw';
+      // 보이는 부분의 윈도우창 전체를 지정하는 중입니다.
+      root.style.width = '100vw';
+      // 최소 높이값을 지정했습니다.
+      root.style.minHeight = '100vh';
+      // 높이의 값을 자동으로 지정했습니다.
+      root.style.height = 'auto';
+      // 위 아래로 여유를 주었습니다.
+      root.style.margin = '2vw auto';
+      root.style.boxSizing = 'border-box';
+      root.style.overflowX = 'hidden';
+      root.style.padding = 0;
+      return 
+    }
+    
+
+    // 네임리스트를 받아와서 div태그를 생성합니다.
+    // 즉 새로운 칸을 만듭니다. 
+    for(i = 0; i <names.length; i++ ){
+      root.innerHTML += `<div>${names[i]}</div>`;
+      root.children[i].style.display = 'flex';
+      // 요소들을 세로값을 중앙으로 정렬합니다.
+      root.children[i].style.alignItems = 'center';
+      // 이곳에선 요소들의 가로값을 중앙으로 정렬합니다.
+      root.children[i].style.justifyContent = 'center';
+      // 배경색을 바꿀 수 있습니다.
+      root.children[i].style.backgroundColor = '#f0f0f0';
+      root.children[i].style.fontSize = '1rem';
+      // 항목별로 구분하기 위하여 마감선을 쳐습니다.
+      root.children[i].style.border = '1px solid #ccc';
+      root.children[i].style.padding = '1vw';
+      root.children[i].style.boxSizing = 'border-box';
+      root.children[i].style.overflowX = 'hidden';
+    }
+
+
+    // 브라우저를 킬 때, 초기에 값으로 root의 style을 지정하지 않으면, media함수가 실행될 때 까지는 root의 style이 지정되지 않아, 격자로 짜지지 않았습니다.
+    // 때문에 기본으로 초기값을 지정해 주기 위하여, 작성하였습니다.
+    if(window.matchMedia("(max-width: 600px)").matches){
+      root.style.gridTemplateColumns = 'repeat(1,1fr)';
+      root.style.gridAutoRows = '120px';
+      for(i=0;i<names.length;i++){
+        root.children[i].style.minHeight = '120px';
+      }
+      public();
+    } else if (
+      window.matchMedia("(min-width: 601px)"&&"(max-width: 900px)").matches)
+    {
+      root.style.gridTemplateColumns = 'repeat(3, 1fr)';
+      root.style.gridAutoRows = 'minmax(150px, auto)';
+      public();
+      for(i=0;i<names.length;i++){
+        root.children[i].style.minHeight = '150px';
+      }
+    } else {
+      root.style.gridTemplateColumns = 'repeat(5,1fr)';
+      root.style.gridAutoRows = 'minmax(150px, auto)';
+      public();
+    }
+
+    
+    // 반응해서 움직이게 하기 위해서, 미디아 함수라는 것을 만들었습니다.
+    function media() {
+      if(window.matchMedia("(max-width: 600px)").matches){
+        root.style.gridTemplateColumns = 'repeat(1,1fr)';
+        root.style.gridAutoRows = '120px';
+        for(i=0;i<names.length;i++){
+          root.children[i].style.minHeight = '120px';
+        }
+      } else if (
+        window.matchMedia("(min-width: 601px)"&&"(max-width: 900px)").matches)
+      {
+        root.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        root.style.gridAutoRows = 'minmax(150px, auto)';
+        for(i=0;i<names.length;i++){
+          root.children[i].style.minHeight = '150px';
+        }
+      } else {
+        root.style.gridTemplateColumns = 'repeat(5,1fr)';
+        root.style.gridAutoRows = 'minmax(150px, auto)';
+      }
+    }
+    
+
+
+
+    // function click(){
+    //   for(i=0;i<names.length;i++){
+    //     root.children[i].addEventListener("click", ()=> {
+    //       for(j=0;j<names.length;j++){
+    //         if(root.children[j].style.backgroundColor === 'rgb(240, 240, 240)'){
+    //           alert(`${root.children[j].innerHTML}를 체크하셨습니다.`);
+    //           root.children[j].style.backgroundColor = "red";
+    //         } else {
+    //           alert(`${root.children[j].innerHTML}님 체크를 취소하셨습니다.`);
+    //           root.children[j].style.backgroundColor = "rgb(240,240,240)";
+    //         }
+    //       }
+    //     });
+    //   }
+    // }
+    // click();
+
+    // 강사님께 체크하면 체크했다고 알리고 싶었는데 for문을 사용해서 반복하니, 두번째 for문에는 첫번째 for문의 i값이 닿지 않았습니다. 같은 변수를 사용해야 할 것 같은데, 고민입니다.
+    
+    function click(a){
+      root.children[a].addEventListener("click",()=>{
+        if(root.children[a].style.backgroundColor === 'rgb(240, 240, 240)'){
+            alert(`${root.children[a].innerHTML}를 체크하셨습니다.`);
+            root.children[a].style.backgroundColor = "red";
+          } else {
+            alert(`${root.children[a].innerHTML}님 체크를 취소하셨습니다.`);
+            root.children[a].style.backgroundColor = "rgb(240,240,240)";
+          }
+      });
+    }
+    for(i=0;i<names.length;i++){
+      click(i);
+    }
+    // 함수를 만들고, 그 함수를 for문으로 반복시키니 해결이 되었습니다.
+    // 뭔가 좀 더 말끔한 해결방법이 있을 것 같습니다.
+    
+
+    // 브라우저의 사이즈를 바뀔때 이를 감지하여 media함수를 실행합니다.
+    window.addEventListener("resize", media);
+
+      // 과거의 흔적들...
+      // base();
+      
+      // function base() {
+      //   document.body.style.padding = 0
+      //   document.body.style.margin = 0
+      //   document.body.style.boxSizing = 'border-box';
+      //   document.body.style.overflowX = 'hidden';
+      //   root.style.display = 'grid';
+      //   root.style.gridTemplateColumns = 'repeat(5,1fr)';
+      //   root.style.gridTemplateRows = 'repeat(4,1fr)';
+      //   root.style.gap = '1vw';
+      //   root.style.width = '100vw';
+      //   root.style.minHeight = '100vh';
+      //   root.style.height = 'auto';
+      //   root.style.margin = '2vw auto';
+      //   root.style.gridAutoRows = 'minmax(150px, auto)';
+      //   root.style.boxSizing = 'border-box';
+      //   root.style.overflowX = 'hidden';
+      //   root.style.padding = 0;
+      // }
+      
+      // function m6uM9d() {
+      //   if (window.matchMedia("(min-width: 601px)"&&"(max-width: 900px)").matches)
+      //   {
+      //     root.style.gridTemplateColumns = 'repeat(3, 1fr)';
+      //     root.style.gridAutoRows = 'minmax(150px, auto)';
+      //     for(i=0;i<names.length;i++){
+      //       root.children[i].style.minHeight = '150px';
+      //     }
+      //   }
+      // }
+      
+      // function M6d() {
+      //   if(window.matchMedia("(max-width: 600px)").matches){
+      //     root.style.gridTemplateColumns = 'repeat(1,1fr)';
+      //     root.style.gridAutoRows = '120px';
+      //     for(i=0;i<names.length;i++){
+      //       root.children[i].style.minHeight = '120px';
+      //     }
+      //   }
+      // }
+      </script>
+</body>
+</html>

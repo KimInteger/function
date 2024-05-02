@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var names = [
+      "구하림",
+      "김보미",
+      "김수현",
+      "김정수",
+      "문혜림",
+      "배성빈",
+      "백지원",
+      "송이현",
+      "신지윤",
+      "유으뜸",
+      "유호영",
+      "이연승",
+      "이재영",
+      "이종수",
+      "임유진",
+      "정호연",
+      "조우식",
+      "조자연",
+      "최유진",
+      "황재민"
+    ];
+
+    // 한 번 실행 vs 여러번 실행
+    // 언어야 내가 목록을 줄께, 이것을 니가 처음부터 끝까지 실행해줄래?
+    // 실행이 몇번 될지 모른다.
+    // 하지만 내가, 개발자가 일하는 것이 아님
+    // 일이 편해진다. <- 고수준에 해당한다.
+
+    // 소괄호와 중괄호가 있다는 것은? 함수라는 것 
+    // 소괄호를 쓰고 중괄호를 만든 후 안을 채우는 순서로 하자.
+
+    // for문아 내가 index라는 변수를 선언하고 초기화를 했어, 만약에 index가 5보다 작다면, index의 값을 더해줘
+
+    /* 반복할래 (초기값 = 0'무조건 0이란 법은 없다'; 실행 조건 : 숫자 < 5;
+    동작 : 조건에 맞춰 실행하고 index를 1 더 해줘) 언제까지? 안될 때 까지. */
+    // for(var index = 0;
+    // index < 5;                   // 요게 50만이건 500만이건 사람이 하기 힘든 것을 컴퓨터는 해낼 수 있다.  
+    // index++) {
+    //   window.console.log(index); // 와 내가 컴퓨터한테 일 짬시켰다!  
+    // }
+
+
+    // // 위의 for문을 실제로 적으려면 이렇게된다.
+    // // 이것의 경우 뭔지 바로 알 수 있다. 내가 뭘 찾으려는지 알 수 있다.
+    // // 이것을 리터럴이라고한다.
+    // // 실제 작성되어져버린 값 = 리터럴 literal
+    // // 이 리터널 값은 : 야근의 상징이다. (유지보수의 상징)
+    // window.console.log(0);
+    // window.console.log(1);
+    // window.console.log(2);
+    // window.console.log(3);
+    // window.console.log(4);
+
+
+    // 위 포문과 다른점은 역순이란 것이다.
+  
+    for(var index = 5;
+    index > 0;                   
+    index--) {                   
+      window.console.log(index); 
+    }
+    
+
+    // 가벼운 2단 만들기
+    var x = 'x'
+    var e = '='
+
+    for(var i = 1; i < 10; i++) {
+      window.console.log(2, x, i, e, 2*i);
+    }
+    
+
+
+    // names.length는 넘버타입이라는 것을 전 문서 prac1에서 확인하였다.
+    window.console.log(typeof(names.length)); // 한번더 확인해보기 실제 콘솔창에서 number인 것을 확인.
+
+
+    // 계속 해서 반복해야 하기 때문에, 하나의 값만 가져오는것은 이상하다.
+    for(var j = 0; j < names.length; j++) {
+      window.console.log('<li>' + names[j] + '</li>');
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>

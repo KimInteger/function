@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계획표 출력해보기</title>
+</head>
+<body>
+  <div id="root">
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+  <script>
+    var root = window.document.getElementById('root');
+    for(var i = 0; i < 24; i ++){
+      let makeTag = `<p>${i}</p>`
+      makeTag.textContent = i;
+      root.innerHTML += makeTag;  // += 추가시킨다. 기존에 있던 값에 추가로 대입. 계속 추가가 되는 것.
+    }
+  </script>
+</body>
+</html>

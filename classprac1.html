@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <h1>CSS는 디자이너에게 넘겨주기.</h1>
+    <p>CSS는 프로그래밍이 아닌, 디자인에 가까운 작업이다.</p>
+    <p>개발자는 CSS의 코어를 이해했기 때문에, CSS 대신에 작업 스크립트로 스타일을 조작 할 수 있다.</p>
+    <p>태그는, 객체라는 사실을 잊지 말자.</p>
+  </div>
+  <script>
+    var root = window.document.getElementById('root');
+    // 문서에서 id를 근거로 식별한 요소를 변수 root에 할당
+    window.console.log(root); 
+    // HTML은 객체(object)덩어리 이므로, 객체를 조회
+    window.console.dir(root);
+    // root 객체의 속성을 출력(수많은 속성, property들이 출력됨)
+    window.console.log(root.children);
+    // 속성중에 children, HTML에서 수없이 확인했던 '자식요소'에 접근
+    // ☆ 배열이 하나 나온다. 0번째부터 3번째까지 [h1, p, p, p]
+    // 여기서 알 수 있다. 모든 것들은 자식으로 들어간다! 우리는 보기 편하게 들여쓰기를 사용하여
+    // 표시했지만, 태그 안에들어가면 자식으로 들어간다.  
+
+
+    // HTML은 객체이면서도, 묶어서 확인하면 배열처럼 처리
+    for(var i = 0; i < root.children.length; i++) {
+      window.console.log(root.children[i]); // 자식요소를 순차적으로 출력
+      // ☆ 출력됨을 확인 할 수 있었다. h1태그 p태그 p태그 p태그의 순서로 위 html > body > div > h1,p,p,p가 출력되었다.
+    }
+
+
+    // CSS를 사용하지 않고, 스크립팅으로 스타일 '명령'
+    root.style.display = 'flex'; // root 객체의 style 속성(property)에 display 속성을 추가하고, 'flex'값을 할당
+    // ☆ JS에서 값을 할당할때는 '문자열'의 형태를 띄어야 한다. 혹은 배열 혹은 number타입
+    root.style.flexDirection = 'column'; // root 객체의 style 속성에 flexDirection 속성을 추가하고, column값을 할당
+    root.style.alignContent = 'center'; // root 객체의 style 속성에 alignContent 속성을 추가하고, center값을 할당
+    root.style.justifyContent = 'center'; // root 객체의 style 속성에 justifyContent 속성을 추가하고, center값을 할당
+
+    window.console.log(root.style);
+    // 이거 왜 배열로 나옴? 그냥 추가한거 확인하는 용도로 추가해준듯싶다
+    // 동적으로 재할당한 것들은 내가 재할당한거니까 그거 확인하라고.
+
+    window.console.dir(root.childNodes[5].style);
+    window.console.log(root.children);
+
+    let j = ["red","blue","green"];
+    for(var i = 0;i < 3; i++){
+      if(i === 0){
+        root.children[0].style.color = j[0];
+      } else if (i === 1) {
+        root.style.backgroundColor = 'salmon';
+      } else {
+        root.childNodes[5].style.color = j[2];
+      }
+    }
+
+    // root.style.color = j[0];
+    // root.style.backgroundColor = j[1];
+    // root.childNodes[5].style.color = j[2];
+
+    // if (i === 0){
+    //   root.style.color = j[0];
+    // }
+    // 실험결과 브라우저에 실시간으로 반영되지않는다.
+    // 브라우저 콘솔창에서 i = 0으로 재할당했지만 되지 않았다.
+    // 생각해보니까 콘솔창에서 맘대로 바꿀 수 있으면 문제가 될 듯.
+    // 단 콘솔창에서 if문을 걸어서 제어할 수는 있었다.
+    // 그렇다면 그것을 막을 수 있어야 할 것이다. 보안쪽이겠지?
+
+    let k = 0;
+    setTimeout(()=>{
+      if (k === 0){
+      root.style.color = "white";
+    }
+    },5000);
+    // 5초후에 변했다! 나는 변하게 만들 수 있어! 와!
+    // 근데 내가 반복문으로 지정한 놈들은 변하지 않았다.
+    // 그렇다는 것은 반복문으로 지정한 것이 좀 더 상위에 있다고 볼 수 있는 것일까?
+    // 반복문은 계속 반복해서 이루어지고 있는건가?
+    // 당연하지만 실시간으로 변하지는 않았다. 그렇다면 반복문이 계속해서 실시 되고 있는 것은 아니라는건데
+    // 이것도 선택자의 차이일까?
+    // 선택자의 차이가 맞았다! 좀더 자세히 지정을 해주니 변하는 모습을 확인할 수 있었다.
+
+  </script>
+</body>
+</html>

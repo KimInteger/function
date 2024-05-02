@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    let a = document.createElement('div');
+    a.textContent = '안녕하세요';
+    root.appendChild(a);
+
+
+
+    // function testa(){
+    //   function testb(){
+    //     console.log(3);
+    //   }
+    //   a.addEventListener('click',testb);
+    // }
+    // testa();
+
+
+    // 뭐야 이거 왜됨??
+
+
+    let num = 4;
+    
+    function testa(b){
+      function testb(b){
+        console.log(b);
+      }
+      a.addEventListener('click',testb(b));
+    }
+    testa(num);
+
+  </script>
+</body>
+</html>

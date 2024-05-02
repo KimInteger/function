@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버튼으로 색상바꾸기</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    /* window.document.all을 체크하자! */
+  </style>
+<body>
+  <script>
+    const root = document.createElement('div');
+    
+    root.id = "root";
+    root.style.backgroundColor = '#D9D9D9';
+    root.style.width = '100vw';
+    root.style.height = '100vh';
+    
+    const div = document.createElement('div');
+    
+    div.style.backgroundColor = '#B0B0B0';    
+    div.style.display = 'flex';    
+    div.style.position = 'absolute';    
+    div.style.zIndex = 1;    
+    div.style.width = '100vw';    
+    div.style.height = '50vh';    
+    div.style.boxSizing = 'border-box';    
+    div.style.padding = '20px';
+    
+    const button = document.createElement('div');
+
+    button.style.backgroundColor = '#464646';
+    button.style.width = '5vw';
+    button.style.height = '5vw';
+    button.style.cursor = 'pointer';
+    button.style.position = 'relative';
+    button.style.top = '3vw';
+    button.style.left = '3vw';
+    button.style.zIndex = 3;
+    
+    document.body.appendChild(root);
+    // 문서야 body의 마지막 자식으로 root를 덧붙여줘!
+    root.appendChild(div);
+    // 루트의 마지막 자식으로 div를 덧붙여줘!
+    root.appendChild(button);
+    // 루트의 마지막 자식으로 button을 덧붙여줘!
+
+    function media(){
+      if (window.matchMedia("(max-width: 600px)").matches) {
+        div.style.width = '80vw';
+        div.style.height = '100vh';
+      } else if(window.matchMedia("(min-width: 601px)"&&"(max-width : 1024px)").matches){
+        div.style.width = '40vw';
+        div.style.height = '100vh';
+      } else {
+        div.style.width = '100vw';
+        div.style.height = '50vh';
+      }
+    }
+
+    window.addEventListener("resize",media);
+
+    // let state = true;
+
+    // function turnLight1(){
+    //   if(state === true){
+    //     div.style.backgroundColor = '';
+    //     state = false;
+    //   } else {
+    //     div.style.backgroundColor = '#B0B0B0';
+    //     state = true;
+    //   }
+    // }
+
+    // button.addEventListener('click', turnLight1);
+
+    
+    function turnLight2() {
+      if(div.style.display === 'flex'){
+        div.style.display = 'none';
+      } else {
+        div.style.display = 'flex';
+      }
+    }
+    
+    button.addEventListener('click',turnLight2);
+
+    // 다른 방법은 무엇이 있을까? 
+    // 내가 했던 것은 백그라운드 그 자체를 지정했었는데...
+    // 버튼의 정사각형을 반응형으로 만들고 싶다.. 크기를 동일하게 유지하게 바뀔 수 있도록.
+
+    // function clickElement(clickTriggerElement, targetElement, someText) {
+    //   function someEvent() {
+    //     targetElement.style.display = someText;
+    //   }
+    //   clickTriggerElement.addEventListener('click',someEvent);
+    // };
+
+    // const elements = {
+    //   triggerElement : button, 
+    //   targetElement : div,
+    //   someText : "none",
+    // }
+
+    
+
+    // // 왜 실행이 될까? 내가 클릭을 안했는데?
+    // // 내 추측은 위에서부터 아래로 가기 때문에 일단 실행을 하는 것이 아닐까?
+    // // 함수가 실행이 됬더라도, 후에 블루가 실행이 되서 파란색 일것.
+    // // 확인용으로 console.log를 넣어서 알게된 사실 addEventListener자체가 지금 들어가지 않았다.
+    // // clickTriggerElement에 addEventListener가 삽입되지 않았다.
+
+    // clickElement(elements.triggerElement, elements.targetElement, elements.someText);
+    // button에 이벤트만 삽입되고 말아야하는 거 아닌가? 왜 실행까지 되지?
+
+    // console.log(root.children[0].children[0]);
+  </script>
+</body>
+</html>

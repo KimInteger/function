@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+body #root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-image: url(./backgroundImagetower.jfif);
+  background-origin: border-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=layoutmyGame.css.map */

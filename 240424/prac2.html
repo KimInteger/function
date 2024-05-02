@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>prac2</title>
+</head>
+<body>
+  <p onclick="e(1,1)">1+1이 뭐게요</p>
+  <script>
+
+  
+    /*
+    함수의 기본형태!
+    function(함수를 만든다) 함수이름(매개변수(매개체가 되어줌)){
+      return(반환한다) a + b (값을);
+    }
+    */
+
+    function plus(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p) {
+      return a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p;
+    }
+
+    function doubleplus(a,b) {
+      return a + b + plus(1,2);
+    }
+    console.log(doubleplus(1,2));
+    // NaN Not a Number 숫자가 아니다!
+
+    function brainfullpowerC(a,b,c){
+      return a + b * c;
+    }
+
+    function brainfullpowerF(a,b,c){
+      return (a + b) * c;
+    }
+    console.log(brainfullpowerC(2,2,2));
+    console.log(brainfullpowerF(2,2,2));
+    
+    /*
+    function a() {
+      console.log(2+2*2);
+    }
+    a()
+    // function a의 역할은? 콘솔에 기록하는것
+    // 산수를 하는게 아니다 이건 콘솔에 기록하는 역할이다
+    // 무엇을? 정해진 사칙연산을, 정해진 리터럴(실제값)을
+    */
+
+    function a(first,second,third) {
+      console.log(first+second*third);
+    }
+    a(2,2,2);
+    // 나는 산수를 한다. X 나는 한다. 산수를
+    // 함수 느낌은 이렇다 두괄식으로 나는 한다 XX를
+
+    /*
+    function b() {
+      return 2+2*2;
+    }
+    // 정해진 값만 계산하고 값을 반환할 뿐 콘솔에 값을 찍어내지는 않는다.
+    console.log(b());
+    // (브라우저야)콘솔에 기록해줘 함수b()를 기록(호출)해줘.
+    */
+  
+    function b(first,second,third) {
+      return first+second*third;
+    }
+    console.log(b(2,2,2));
+
+
+    // 결국 둘의 결과값은 같다! 하지만 접근법이 다르지? 계속보기만 하다가 설명할 수 있으면 좋겠다.
+    // 
+
+    // 만약에 첫번째 값이 숫자가 아니라면? 메롱을 찍어줘
+    function c(first,second) {
+      if(typeof(first) !== typeof(1)){
+        console.log("메롱");
+      }
+      console.log(first+second);
+    }
+    c('야호',2);
+
+    function d(first,second,third) {
+      if(first === 1){
+        for(let i = 0; i < 5; i++){
+          console.log('1이래요');
+          
+        }
+      } 
+      console.log(first + second + third);
+    }
+
+    // if와 else if 조건을 둘다 만족시키면 if만 출력이되나?
+    d(1,2,4)
+
+
+    let p = document.getElementsByTagName('p');
+    p[0].style.color = 'white';
+    console.dir(p);
+    function e(first,second){
+      if(p[0].style.color === "white"){
+        p[0].style.backgroundColor = 'red';
+      }
+      p[0].textContent = first+second;
+      p[0].style.fontSize = '100px';
+      p[0].style.textAlign = 'center';
+    }
+    // if문에 숫자자료형 뿐만아니라 다른 것도 넣어도 된다! 조건을 하는것이기 때문이지.
+    // 지금까지는 모두 숫자로만 해결해서 간과하고 있었던 것.
+    
+
+
+
+
+
+</script>
+</body>
+</html>

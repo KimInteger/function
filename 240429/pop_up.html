@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <button>red</button>
+      <button>blue</button>
+    </div>
+  </div>
+  <!-- <button>빨강 24</button>
+  <button>파랑 30</button>
+  <button>되돌리기 12</button> -->
+  
+  <script>
+    let root = document.getElementById('root');
+    rootStyle = root.style;
+    rootStyle.width = '300px';
+    rootStyle.height = '300px';
+    rootStyle.border = '1px solid black';
+    rootStyle.display = 'flex';
+    rootStyle.justifyContent = 'center';
+    rootStyle.alignItems = 'center';
+    rootStyle.columnGap = '10px';
+    
+    root.children[0].style.display = 'none';
+    root.children[0].style.columnGap = '10px';
+
+    btn = document.getElementsByTagName('button');
+
+
+    let isState = true;
+
+    function appear(){
+      root.children[0].style.display = 'flex';
+      console.log(root.children[0].style.display);
+    }
+
+    function exampleA(){
+      if(isState === true){
+        root.style.backgroundColor = 'red';
+        root.children[0].style.display = 'none';
+        isState = false;
+        console.log(root.children[0].style.display);
+      } else {
+        root.style.backgroundColor = '';
+        isState = true;
+      }
+    }
+
+    function exampleB(){
+      if(isState === true){
+        root.style.backgroundColor = 'blue';
+        root.children[0].style.display = 'none';
+        isState = false;
+        console.log(root.children[0].style.display);
+      } else {
+        root.style.backgroundColor = '';
+        isState = true;
+      }
+    }
+
+    root.addEventListener('click', appear);
+    btn[0].addEventListener('click',exampleA);
+    btn[1].addEventListener('click',exampleB);
+
+    /* 2번 작업
+    // root.addEventListener('mousedown', modal);
+    // mousedown을 선택하면 마우스를 눌렀을 때 기준이기 때문에 먼저 실행되어서 내가 원하는 행동이 가능하지만 근본적으로 내가 원하는 것은 아니었다.
+    root.addEventListener('click', modal);
+    btn[0].addEventListener('click', changeColorR);
+    btn[1].addEventListener('click', changeColorB);
+
+
+    function modal(){
+      root.children[0].style.display = 'flex';
+      console.log(root.children[0].style.display);
+    }
+
+    function changeColorR() {
+      root.style.backgroundColor = 'red';
+      root.children[0].style.display = 'none';
+      console.log(root.children[0].style.display);
+    }
+
+    function changeColorB() {
+      root.style.backgroundColor = 'blue';
+      root.children[0].style.display = 'none';
+      console.log(root.children[0].style.display);
+    }
+    // 확인결과 동시클릭으로 동시에 실행됨을 알 수 있었음.
+    */
+
+    /* 1번 작업
+    // btn = document.getElementsByTagName('button');
+
+
+    // function changecolorR(){
+    //   rootStyle.backgroundColor = 'red';
+    //   rootStyle.fontSize = '12px';
+    //   root.innerHTML = '<div>낄낄</div>'
+    //   root.children[0].style.backgroundColor = 'orange';
+    //   root.children[0].style.width = '100px';
+    //   root.children[0].style.height = '100px';
+    //   root.children[0].style.fontSize = '24px';
+    //   root.children[0].style.display = 'flex';
+    //   root.children[0].style.alignItems = 'center';
+    //   root.children[0].style.justifyContent = 'center';
+    // }
+
+    // function changecolorB(){
+    //   rootStyle.backgroundColor = 'blue';
+    //   rootStyle.display = 'flex';
+    //   rootStyle.justifyContent = 'center';
+    //   rootStyle.alignItems = 'center';
+    //   root.innerHTML = '<div>낄낄</div>'
+    //   root.children[0].style.backgroundColor = 'green';
+    //   root.children[0].style.width = '100px';
+    //   root.children[0].style.height = '100px';
+    //   root.children[0].style.fontSize = '30px';
+    //   root.children[0].style.display = 'flex';
+    //   root.children[0].style.alignItems = 'center';
+    //   root.children[0].style.justifyContent = 'center';
+    // }
+
+    // function changecolorRT(){
+    //   rootStyle.backgroundColor = 'white';
+    //   root.innerHTML = '낄낄';
+    // }
+
+    // btn[0].addEventListener('click', changecolorR);
+    // btn[1].addEventListener('click', changecolorB);
+    // btn[2].addEventListener('click', changecolorRT);
+    */
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- div와 button태그는 형제관계로 묶여있다. -->
+  <!-- div에는 어트리뷰트 이름 id에 값 root를 할당했다. -->
+  <!-- button에는 어트리뷰트 노드 id = 'button-click'을 할당했다. -->
+  <!-- button의 텍스트노드에 '친절한 어플리케이션!'이란 컨텐츠를 입력했다. -->
+  <div id="root"></div>
+  <button id="button-click">친절한 어플리케이션!</button>
+  <script>
+    let root = document.getElementById('root');
+    // 브라우저야 문서안에 Id가 문자열로 root인 친구를 찾아서 변수 root에 할당해줘
+    let button = document.getElementById('button-click');
+    // 브라우저야 문서안에 Id가 문자열로 button-click인 친구를 찾아서 변수 button에 할당해줘
+
+    function actionButton() {
+      // 함수 하나 만들께 이름은 actionButton이야 기억해놔줘!
+      let newElement = document.createElement('p');
+      // 자바스크립트야 문서에서 p라는 요소를 만들어서 할당해줘 newElement라는 변수에
+      newElement.textContent = '안녕!';
+      // newElement의 textContent에 안녕! 이라는 문자열타입의 데이터를 할당할게!
+      root.appendChild(newElement);
+      // root의 자식요소로 newElement를 붙여줘!!
+    };
+
+    button.addEventListener('click', actionButton);
+    // 버튼에 이벤트를 추가할꺼야! 누군가가 버튼을 클릭을하면 아까 기억해둔 액션버튼 함수있지? 그거 실행해줘!
+  </script>
+</body>
+</html>

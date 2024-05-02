@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>구조 분해 할당</title>
+</head>
+<body>
+  <script>
+    var  a, b, rest;
+    ({a, b, ...rest} = { a:10, b: 20, c:30, d:40})
+    window.console.log(a);
+    window.console.log(b);
+    window.console.log(rest);
+    window.console.log(rest.c);
+    window.console.log(rest.d);
+
+
+    var o = {p : 42, q: true};
+    var {p,q} = o;
+    window.console.log(p);
+    window.console.log(q);
+    window.console.log(typeof(o));
+    window.console.log(typeof(p));
+    window.console.log(typeof(q));
+    window.console.log(o);
+    p = 44;
+    window.console.log(o);
+    window.console.log(p);
+    
+    var {g,h} = o;
+    window.console.log(g);
+    window.console.log(h);
+    // 동일한 문자에 값을 넣어줘야 되는 것 같다.
+
+
+    /*
+    var r = { v : 42, n : true};
+    var {v : foo, n : bar} = r;
+    console.log(foo);
+    console.log(bar);
+    // v에 42가 대입되버린건가? 그래서 v는 사라지고 foo가 변수가 된건가? 그게 되나? 내가 배운거로는 v는 key고 foo가 값이 아닌가?
+    // 이것을 이해해야 구조분해할당에 대해서 알 수 있을것같은데? 어떻게 이해해야할까.
+    // 서로가 key일수도 있는건가? 그럼 반대로 해볼까?
+    console.log(r);
+    */
+
+    var r = { foo : 42, bar : true};
+    var {foo : v, bar : n} = r;
+    
+    // var {v : foo, n : bar} = r;
+    // 일단 알아낸 것, 순서가 매우 중요하다 순서가 바뀌니까 아에 값이 안나온다.
+    console.log(v);
+    console.log(n);
+    // 그리고 하나더 순서를 바꾸니 a : v 에 있는것을 a: b를 대입하니까 b : v가되었다. 
+    // 그냥 그렇게 이해하기로 하자 일단은.
+
+
+    /*
+    정리를 해보자. 내가 생각했던 것? p랑 q라는 변수를 새로 생성하고 그것과 o안의 key가 연결되있는가?
+    결론부터 말하자면 아니다.
+    그리고 애초에 저 변수는 {p,q}인가 p와 q인가
+    어떻게 확인하지? 확인을 위해 콘솔창에 동일하게 적었지만 나오지 않았으므로 p와 q라고 할 수 있겠다.
+    연동되지 않았다는 것을 안것은 p에 새로운 값을 재할당한다음 콘솔로그를 사용하여 비교해보고 알았다.
+    true와 false는 boolean에만 해당한다.
+    그러니까 객체를 쪼개서 한게아니라 객체에 있는 값을 넣어줬다고 할 수 있겠다. 한번더 확인을 위해 
+    p,q가 아닌 g,h로 해보자
+    g와 h로 하였을때 undefined가 나왔다. 그렇다면, p와 q가 연관이 있다는 것이다.
+    */
+
+
+    function* g1() {
+      yield 1;
+      yield 2;
+      yield 3;
+    }
+
+    var l = g1();
+
+    window.console.log(l.next());
+    window.console.log(l.next());
+    window.console.log(l.next());
+    window.console.log(l.next());
+    window.console.log(typeof(l));
+    window.console.log(l);
+
+    var key = Symbol('key');
+    window.console.log(typeof key);
+    window.console.log(key);
+
+    var obj = {};
+    obj[key] = 'value';
+    window.console.log(obj[key]);
+    window.console.log(obj);
+    obj.name = 'yeah';
+    window.console.log(obj);
+  </script>
+  
+</body>
+</html>

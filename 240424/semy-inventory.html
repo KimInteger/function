@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inventory</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body > div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 1200px;
+    height: 300px;
+    border: 1px double black;
+  }
+  
+  body >div:nth-child(1) > div {
+    width: 280px;
+    height: 280px;
+    border: 1px solid black;
+  }
+  body >div:nth-child(1) > div > img{
+    width: 100%;
+    }
+</style>
+<body>
+  <div id="root">
+    <div onclick="loot(0)">
+
+    </div>
+    <div onclick="loot(1)">
+
+    </div>
+    <div onclick="loot(2)">
+
+    </div>
+    <div onclick="loot(3)">
+
+    </div>
+  </div>
+  <!-- <div id="root">
+    <div onclick="lootA()">
+
+    </div>
+    <div>
+
+    </div>
+    <div onclick="lootB()">
+
+    </div>
+    <div onclick="lootC()">
+
+    </div>
+  </div> -->
+  <script>
+    let root = document.getElementById('root');
+    let img = document.createElement('img');
+    let sword01 = {
+      name : "초심자의 검",
+      attack : "24 damage",
+      range : 300,
+      type : "shot range",
+    }
+
+    function loot(a){
+      if(a === 0){
+        root.children[a].innerHTML = "<img src=\"./finally.png\" alt=\"\">";
+      }
+      else if(a === 1){
+        root.children[a].innerHTML = "<img src=\"./yleid.png\" alt=\"\">";
+      }
+      else if(a === 2){
+      root.children[a].innerHTML ="<img src=\"./angry.png\" alt=\"\">";
+      }
+      else {
+      root.children[3].innerHTML = "<img src=\"./giveme.png\" alt=\"\">"; 
+      }
+    }
+
+    // function loot(a){
+    //   if(a === 0){
+    //     root.children[a].innerHTML = `<div></div>`;
+    //     root.children[a].children[0].outerHTML = "<img src=\"./finally.png\" alt=\"\">";  // 칠드런 0의 자리를 만들어내서 그 곳에 아우터 html값을 대입한것.
+    //   }
+    //   else if(a === 1){
+    //     root.children[a].innerHTML = `<div></div>`;
+    //     root.children[a].children[0].outerHTML = "<img src=\"./yleid.png\" alt=\"\">";
+    //   }
+    //   else if(a === 2){
+    //   root.children[a].innerHTML = `<div></div>`;
+    //   root.children[a].children[0].outerHTML = "<img src=\"./angry.png\" alt=\"\">";
+    //   }
+    //   else {
+    //   root.children[3].innerHTML = `<div></div>`;
+    //   root.children[3].children[0].outerHTML = "<img src=\"./giveme.png\" alt=\"\">"; 
+    //   }
+    // }
+    // 하나로 완성할 수 있었다.
+
+
+    function lootA(){
+      root.children[0].innerHTML = `<div></div>`;
+      root.children[0].children[0].outerHTML = "<img src=\"./finally.png\" alt=\"\">";  // 칠드런 0의 자리를 만들어내서 그 곳에 아우터 html값을 대입한것.
+        // 아니네 위의 항목으로 새로운 div를 만들어 내고 그 걸 이미지로 바꾸는 거였어.
+      }
+    function lootB(){
+      root.children[2].innerHTML = `<div></div>`;
+      root.children[2].children[0].outerHTML = "<img src=\"./angry.png\" alt=\"\">";
+    }
+    function lootC(){
+      root.children[3].innerHTML = `<div></div>`;
+      root.children[3].children[0].outerHTML = "<img src=\"./giveme.png\" alt=\"\">"; 
+    }
+    // 기존코드 root.children[3].children[3].outerHTML 아니 ㅋㅋ children[3]에서 children[3]이 있겠냐구 만든게 1개뿐이데 당연히 0번이지. 아이고!
+    // 아잇! 새로생긴게 0번말고 더 있을리가 없자너!
+    // 이거가지고 고민을 하고 있었네! 하지만 발견했죠?
+    // 정보에 이미지를 담는것과
+    // 이미지에 정보를 담는것
+    // 아마 정보에 이미지를 담는게 맞겠지?
+
+    let arr = ["a","b","c"];
+    let arr1 = ["e","f","g"];
+    for(i=0;i<arr1.length;i++){
+      arr.push(arr1[i]);
+      console.log(arr);
+    }
+    console.log(arr);
+
+    let inven = [];
+    console.dir(inven);
+    let item = ["1","2","44","25","56"];
+    function lootI(a){
+      inven[a] = item[a];
+    }
+    for(i = 0; i < item.length; i ++){
+      lootI(i);
+    }
+    console.dir(root.children[0]);
+
+    </script>
+</body>
+</html>

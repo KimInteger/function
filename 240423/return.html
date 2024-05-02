@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function counter() {
+      for (var count = 1; ; count++) {
+      // 무한 반복
+        console.log(count + "A"); // 5까지
+        if (count === 5) {
+          return;
+        }
+        console.log(count + "B"); // 4까지
+        }
+      console.log(count + "C"); // 절대 나타나지 않음
+}
+
+counter();
+
+// break의 경우 실행할 실행문이 남아있다면 그것까지 실행을 한다. 그래서 5C라는 값이 나타난다.
+// return의 경우 그 즉시 함수 실행을 멈춘다. 때문에 C가 나타나지않는다.
+  </script>
+</body>
+</html>

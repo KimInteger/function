@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- id는 바디를 대신할 친구 -->
+  <div id="root"> <!-- ! 사실은 동적할당을 해준것. 밑의 스크립트의 root.id = '값';과 같다. 작성법이 다를뿐이다. -->
+    <div>김수현</div>
+    <div>유호영</div>
+    <div>조자연</div>
+  </div>
+  <script>
+    // let 변수 선언식중 하나
+    // 윈도우야 문서에 Id가 'root'인 것을 가져와줘.
+    let root = window.document.getElementById('root'); //변수 root선언 이후 root에 할당해줘 뭐를? 문서안에 Id가 root인 요소를
+    window.console.log(root); // root를 기록해줘.
+    window.console.dir(root); // root의 구조를 보여줘
+    root.id = 'container';
+    window.console.log(root);
+    window.console.dir(root);
+
+    root.children[0].textContent = "문혜림";
+
+    window.console.log(root.children[0].textContent);
+
+    // 문혜림 김정수 배성빈 으로 바꾸기? for문을 사용해서? 어떻게 해야할까?
+    // 3개의 자식을 반복문을 통해서 각각 다른 값으로 바꾸기?
+
+    for (let i = 0; i < root.children.length; i++) {
+      if(root.children[i] === root.children[0]) {
+        root.children[i].textContent = "김정수";
+        window.console.log(root.children[i].textContent);
+      } else if (root.children[i] === root.children[1]) {
+        root.children[i].textContent = "배성빈";
+        window.console.log(root.children[i].textContent);
+      } else {
+        root.children[i].textContent = "문혜림";
+        window.console.log(root.children[i].textContent);
+      }
+    }
+
+    for (let j = 0; j < root.children.length; j++ ) {
+      window.console.log(root.children[j]);
+    }
+
+    window.console.log(root.children);
+    // 이것은 디자이너들은 못하는 수준이다 -> 자부심을 가지고 연구해보자!
+
+
+
+  </script>
+</body>
+</html>

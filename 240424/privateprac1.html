@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>priprac</title>
+</head>
+<body>
+  <div id="root">
+    <h1>저슷라이큐~맘마미아~!</h1>
+  </div>
+  <script>
+    let root = window.document.getElementById('root');
+    console.log(root);
+    console.dir(root);
+    console.log(root.children);
+    console.log(root.children[0]);
+    console.log(root.children[0].innerHTML);
+
+    let h1 = window.document.getElementsByTagName('h1');
+    console.dir(h1);
+    h1[0].textContent = "김코사인";
+    console.log(h1[0].textContent);
+    console.dir(h1[0]);
+    
+    // 동적 할당
+    root.children[0].style.color = 'red';
+    root.children[0].style.backgroundColor = 'silver';
+    root.children[0].innerHTML = "김인티저";
+    console.dir(root.children[0]);
+    console.dir(h1);
+    </script>
+</body>
+</html>

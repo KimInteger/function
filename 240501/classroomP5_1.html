@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function whatWork(inputString){
+      // 함수를 선언할게 이름은 whatWork야 매개변수를 받을꺼야.
+      let result = "";
+      // 지역변수로서 result를 선언하고 문자열 타입을 할당해서 초기화할게.
+      let isWhatWorked = false;
+      // 지역변수로서 isWhatWorked를 선언하고 값을 false로 할당함으로써 불리언타입으로 초기화할게 
+      let space = " ";
+      // 지역변수로 space를 문자열타입로 초기화할게 공백( )을 할당했어.
+
+      for (let i = 0; i < inputString.length; i++){
+        // 반복해줘 무엇을? 실행문을 i = 0이고, 실행문이 실행될때마다 i에 i+1을 할당할꺼야
+        // 조건이 맞다면 계속해서 반복해줘.
+        if(inputString[i] !== space){
+          // 1. 만약 입력한 문자열의 인덱스서순 i번째가 지역변수 space와 같지 않다면? if의 실행문을 실행해줘
+          if(isWhatWorked === true){
+            // 1-1. 만약 1번을 통과했다면 한번 더 점검할게, 지금 isWhatWorked가 true라면 1-1 의 실행문을 실행해줘 아니라면 출력하지마!
+            result = result + inputString[i];
+            // 실행문 지역변수 result에 result + inputString[i]의 값을 할당해줘
+            
+            // 1-1 해당 되지 않는다면? 실행하지 않고 증감식으로 넘어가
+            // 1-2 실행문이 모두 끝났으므로, i++
+            // 1-3 다시 조건을 확인하고 만약 조건이 true라면 1로 돌아감
+          } else {
+            // 2. 만약 1을 만족하지 못했다면, 이것을 실행해줘!
+            if(inputString[i] !== space){
+              // 2-1. 만약 inputString[i]가 지역변수 space와 타입과 값이 같지 않다면? 실행문을 실행해줘
+              isWhatWorked = true;
+              // isWhatWorked의 값을 true로 할당해줘
+              result = result + inputString[i];
+              // 지역변수 result에 result + inputString[i]를 할당해줘.
+              
+              // 2-1 해당 되지 않는다면? 실행할 실행문이 없으므로 증감식으로 넘어가!
+              // 2-2 실행문이 모두 끝났으므로, i++
+              // 2-3 다시 조건을 확인하고 만약 조건이 true라면 1로 돌아감
+            }
+          }
+        }
+      }
+      return result;
+      // 3. whatWork함수를 호출하면 값으로 result를 반환해줘! 어떤 result? for반복문이 모두 끝나고 할당 된 지역변수 result의 값을 반환해줘!
+    }
+    /*
+    이 함수를 실행하는 순간 어떻게 진행이 될까?
+    먼저 지역변수들이 초기화된다. 이름과 값이 할당된다.
+    이 후 for반복제어문이 실행이된다.
+    이 때 반복제어문은 i=0부터 시작하여 조건식이 맞는 inputString.length 즉 입력된 매개변수의 마지막 문자열이 끝날 때 까지 진행된다.
+    시작된 반복문은 조건문을 만나서 두가지로 갈라선다. 만약 조건이 true라면 첫번째 if문의 실행문을 실행할 것이고, 그렇지 않다면 else의 실행문을 실행한다.
+    각각의 실행문에 돌입하면 그 안에 새로운 조건문이 있음을 확인할 수 있다. 다시한번 조건에 true라면 그 조건문을 실행할 것이고, 그렇지 않다면 따로 지정되어있지 않기 때문에 값은 출력되지 않는다.
+    이렇게 반복을 계속한 후, 반복제어문이 끝나는 시점에서 result의 값이 새롭게 할당되어 있을것이다. 
+    정확히는 실행문에서 계속해서 값을 새로 대입하므로 반복문이 끝난 시점에선 result의 값이 초기화때와는 다르다.
+    이 result를 함수를 호출하면 출력되도록 return을 통해 반환해준다.
+    그러면 결과물로써 space에 해당하는 공백이 모두 빠진 채로 inputString에 해당하는 객체의 문자열이 출력될 것이다.
+    */
+    const quotes = "성공은 결과이지 목적이 아니다. 목적은 당신이 무엇을 하느냐이다."; // 알버트 슈바이처
+    // 변수를 선언할게 이름은 quotes고 값으로는 문자열을 할당할꺼야. 
+    const trimmedQuotes = whatWork(quotes);
+    // 변수를 선언할게 이름은 trimmedQuotes고 값은 whatWork함수에 매개변수로 quotes를 넣었을 때의 출력값이야.
+    console.log(trimmedQuotes);
+    // 브라우저야 콘솔창에 trimmedQuotes좀 기록해줘.
+  </script>
+</body>
+</html>

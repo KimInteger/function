@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 배열속에 배열을 넣었잖아?
+    var names = [
+    ["구", "하", "림"],
+    ["김", "보", "미"],
+    ["김", "수", "현"],
+    ["김", "정", "수"],
+    ["문", "혜", "림"],
+    ["배", "성", "빈"],
+    ["백", "지", "원"],
+    ["송", "이", "현"],
+    ["신", "지", "윤"],
+    ["유", "으", "뜸"],
+    ["유", "호", "영"],
+    ["이", "연", "승"],
+    ["이", "재", "영"],
+    ["이", "종", "수"],
+    ["임", "유", "진"],
+    ["정", "호", "연"],
+    ["조", "우", "식"],
+    ["조", "자", "연"],
+    ["최", "유", "진"],
+    ["황", "재", "민"]
+    ]
+
+    window.console.log(names);  
+    
+    for( i = 0; i < names.length; i++) {
+      window.console.log(names[i]);
+    }
+
+    for( i = 0; i < names.length; i ++){
+      for( j = 0; j < 1; j++){
+        window.console.log(names[i][j],names[i][j+1],names[i][j+2]);
+      }
+    }
+
+
+
+
+    window.console.log(names[3][0],names[3][1],names[3][2]);
+    window.console.log(names[3][1]);
+    window.console.log(names[3][2]);
+
+    
+    for( i = 0; i < names.length; i ++){
+      if(i === 3){
+        for( j = 0; j < 1; j++){
+        window.console.log(names[i][j],names[i][j+1],names[i][j+2]);
+        }
+      }
+    }
+    
+    // 김 정 수 <- 출력결과
+    // 하지만 이건 내가 직접 찾아가지고 어떻게든 어거지로 하려고 했던것. 실제로 찾으려면 어떻게해야할까?
+    
+
+
+
+    // window.console.log(names[3]);
+    
+    for( i = 0; i < names.length; i++) {
+      if(i === 3){
+        window.console.log(names[i][0],names[i][1],names[i][2]);
+      }
+    }
+
+    // 김 정 수 <- 출력결과
+    // 위나 아래나 다를게 뭐가있지? 결국 내가 찾아서 했다. 흠.....
+
+
+    
+    for( i = 0; i < names.length; i++) {
+      if(names[i][0] === '김', names[i][1] === '정', names[i][2] === '수'){
+        window.console.log(names[i][0],names[i][1],names[i][2]);
+      }
+    }
+    // 출력값 김 정 수 , 이 종 수 아무래도 if조건문은 가장 마지막을 기준으로 출력하나보다.
+    // 중간의 것들은 상관이 없다
+    
+
+
+
+    
+    for( i = 0; i < names.length; i++) {
+      if(names[i][1] === '정'){
+        window.console.log(names[i][0],names[i][1],names[i][2]);
+      }
+    }
+    // 출력값 김 정 수, 나만 있는 문자를 찾아서 지정하는 형식이었다. 아에 내 이름전체를 지정하려면 어떻게해야할까?
+    
+
+      
+      for ( i = 0; i < names.length; i++) {
+        if(names[i][0] != '김') {
+          continue;
+        } else if (names[i][1] === '정') {
+          window.console.log(names[i][0],names[i][1],names[i][2]);
+        }
+      }
+
+      // 위와 동일하지만 다른 점은 두번째 조건이 names[i][1]이 '정'이 맞다면 출력하라는 것이다.
+      
+      // 예상 결과값 김 정 수 
+      
+      // 실제 결과값 김 정 수 
+      
+    
+    
+    for ( i = 0; i < names.length; i++) {
+      if(names[i][0] != '김') {
+        continue;
+      } else if (names[i][1] != '정') {
+        continue;
+      } else if (names[i][2] === '수') {
+        window.console.log(names[i][0]+names[i][1]+names[i][2]);
+      }
+    }
+    
+    
+    // 이것을 말로 풀어보자면, 반복해줘 i를 0으로 초기화하고 i는 names.length보단 작아 i는 계속 증가한다.
+    // i가 조건에 맞으면 실행식을 반복해줘
+    // 실행식은 names[i][0]이 '김'이 아니면 처음으로 돌아가.
+    // 만약에 '김'이면 한번 더 확인해 볼게, names[i][1]이 '정'이 아니면 너도 돌아가,
+    // 어? '김'에 '정'이야? 그럼 마지막으로 names[i][2]가 '수'면 콘솔창에 출력해줘
+    // 무엇을? ;names[i][0],names[i][1],names[i][2]를 출력해줘. 
+    // 아! 놀라워라 생각해보니까 +를 쓰면되잖아 나는 왜 ','를 썼지?
+    
+
+    // 이게 이차원 배열이구나 names[i][0]배열을 두개를사용했을때 확인하는 방법!
+
+
+  </script>
+</body>
+</html>

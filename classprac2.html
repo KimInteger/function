@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var someData = [];
+    var someIndex = 0;
+    // var someArray = [];
+
+    // for (var j = 0; j < 11; j++ ) {
+    //   for (var k = 0; k < 10; k++) {
+    //     someArray[j] = k;
+    //   }
+    // }
+    // window.console.log(someArray);
+
+
+
+    for (var i = 0; i < someArray.length; i += 2) {
+      if( i + 1 < someArray.length) {
+        someData[someIndex] = [someArray[i], someArray[i+1]];
+      } else {
+        someData[someIndex] = [someArray[i]];
+      }
+      someIndex++;
+    }
+    console.log(someData);
+    /*
+    반복해!(변수 i를 값을 0으로 초기화할게, i는 someArray의 길이보단 작아(조건식), 증감식은 i에 2를 더해줘){
+      실행문 
+      만약에? (i + 1 이 someArray의 길이값보다 작으면 이것을 실행해) {
+        someData의 [someIndex]에 있는 장소에 배열을 넣을거야 무슨 배열? [someArray의 i번째에 있는 값과 someArray[i+1]]의 값을 대입해줘.
+        그러면 어떻게 값이 대입될까? someData = [[someArray[i],someArray[i+1]]] 이 들어가 있겠지? 
+      } 그것이 아니라면! {
+        someData의 [someIndex]순서에 있는 장소에 배열을 대입할꺼야 [someArray[i]]를
+        someData = [[someArray[i]]]가 들어간다.
+      }
+      이 모든 실행식이 모두 실행된 후에
+      someIndex의 값을 증가시킨다
+      이후
+      i의 값을 2 증가시킨다.
+      언제까지? 조건이 false가 뜰때까지.
+    }
+    */
+
+    console.log(someData);
+  </script>
+</body>
+</html>
