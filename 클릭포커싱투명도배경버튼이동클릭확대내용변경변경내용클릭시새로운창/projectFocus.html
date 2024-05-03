@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <!-- ! container의 역할은 투명도배경으로 포키싱된 요소를 강조하기 위함. 뒤를 적당히 가려서 은은한 효과 -->
+    <div id="container">
+      <!--  ! exitbtn은 나가는 역할을 일시적으로 수행할 녀석. -->
+      <button id="exitbtn"></button>
+    </div>
+    <!-- ! Contain들은 리스트와 새로운 창을 담을 요소 -->
+    <div id="kpopContain"></div>
+    <div id="popContain"></div>
+    <div id="jpopContain"></div>
+    <!-- ! 클릭시 위에 형제로 포커싱 변경 -->
+    <button id="leftMove"></button>
+    <!-- ! 클릭시 아래형제로 포커싱을 변경 -->
+    <button id="rightMove"></button>
+  </div>
+  <script src="./projectFocus.js"></script>
+</body>
+</html>

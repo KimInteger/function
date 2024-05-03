@@ -1,5 +1,7 @@
 document.body.style.margin = 0;
 document.body.style.padding = 0;
+const all = document.querySelectorAll('*');
+console.log(all);
 
 const root = document.getElementById('root');
 let rootS = root.style;
@@ -24,7 +26,6 @@ containS.backgroundColor = 'rgba(255, 255, 255, 0)';
 
 root.appendChild(container);
 
-const ul = document.createElement('ul');
 
 const btn = document.createElement('button');
 // ! 이것은 root > div:nth-child(1)의 자식, 즉 container의 자식으로 넣어여겠다.
@@ -49,6 +50,7 @@ const jpopList = ["Shutter", "no Doubt", "Hadaka no Yuusya"];
 const musicImg = [];
 // 이거 h1을 이거로 대처하고 싶은데... 이미지로...
 
+
 for(let i =0; i < music.length; i++) {
   let divM = document.createElement('div');
   let divH1 = document.createElement('h1');
@@ -67,7 +69,6 @@ for(let i =0; i < music.length; i++) {
   divS.zIndex = 2;
   divH1.textContent = music[i]
   divH1.style.display = 'flex';
-
   root.appendChild(divM);
   divM.appendChild(divH1);
 }
@@ -78,6 +79,7 @@ function clickL(){
   this.style.position = 'absolute';
   this.style.zIndex = 4;
   this.style.backgroundColor = 'salmon';
+  this.children[0].style.display = 'none';
   containS.display = 'flex';
   containS.backgroundColor = 'rgba(27, 27, 27, 0.5)';
   containS.zIndex = 3;
@@ -92,6 +94,7 @@ function exitT(){
     root.children[i].style.backgroundColor = 'cadetblue';
     root.children[i].style.position = 'static';
     root.children[i].style.zIndex = 1;
+    root.children[i].children[0].style.display = 'flex';
   }
   containS.display = 'none';
   containS.zIndex = 0;

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘의 숙제</title>
+</head>
+<body>
+  <!-- ! 내가 원하는것? 기존 배열이 안바뀌고 바뀌게 하기. -->
+  <!-- * 이건 오늘의 숙제! -->
+  <script>
+    function whatCan(arr){
+      let n = arr.length;
+
+      for (i = 0; i < n - 1; i++) {
+        for(j = 0; j < n-i-1; j++){
+          if (arr[j] > arr[j+1]) {
+            let temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+
+    let testArray = [33,12,1251351,1324,33,212,1322];
+    console.log("기존", testArray);
+    // 생각해보니 같은놈이 있으면 어떻게 될까?
+    // 크다면 실행이기 때문에 실행하지 않는다.
+    // 역순으로 작게 만드려면? 조건을 반대로 하면 되지 않을까?
+    // 역시 조건을 반대로하면 역순으로 큰숫자부터 꺼내온다.
+    // 인벤토리 정렬에 사용할 수 있겠다.
+    // 아이템마다 고유 코드를 박아넣고 그 숫자의 크기차이로 하는거지
+    // 힐링포션아이템은 100번대시작 무기는 200번대시작 이런식으로.
+    let afterArray = whatCan(testArray);
+
+    console.log(afterArray);
+    // 바뀌었는지 확인
+    console.log("바뀌었나?",testArray);
+    // 변화가 일어나지 않았는지 확인
+</script>
+</body>
+</html>
