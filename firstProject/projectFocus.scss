@@ -15,23 +15,29 @@
 
 #leftMove {
   position: absolute;
-  top: 40%;
+  top: 37%;
   left: 10vw;
   flex-shrink: 0;
   width: 10vw;
   height: 10vw;
-  font-size: 3rem;
+  font-size: 10rem;
+  background-color: white;
+  border: none;
+  z-index: 4;
   cursor: pointer;
 }
 
 #rightMove {
   position: absolute;
-  top: 40%;
+  top: 37%;
   left: 80vw;
   flex-shrink: 0;
   width: 10vw;
   height: 10vw;
-  font-size: 3rem;
+  font-size: 10rem;
+  background-color: white;
+  border: none;
+  z-index: 4;
   cursor: pointer;
 }
 
