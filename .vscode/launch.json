@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\node-1\\work.js"
+      "program": "${workspaceFolder}\\node-1\\createfileKimInteger.js"
     }
   ]
 }
