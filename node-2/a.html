@@ -1,6 +1,4 @@
-const fs = require('fs');
 
-const mainDocument = `
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -12,9 +10,3 @@ const mainDocument = `
     <h1>hellow nodeJS!</h1>
   </body>
 </html>
-`;
-
-fs.appendFile('a.html', mainDocument,(err)=>{
-  if(err) throw err;
-})
-
