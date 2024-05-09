@@ -38,8 +38,42 @@ function lunchSelector(array){
     console.log(array[select]);
     result = array[select];
   }
-  
   return result;
 }
 
-lunchSelector(lunchMenu);
+
+
+const http = require('http');
+
+const port = process.env.PORT || 3000;
+
+const server = http.createServer((req,res)=>{
+  console.log(req.url);
+  console.dir(req.url);
+  let data = lunchSelector(lunchMenu);
+  res.statusCode = 200;
+  res.setHeader("Content-Type","text/html; charset=utf-8");
+  res.write(`
+  <!DOCTYPE html>
+  <html lang="ko">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>점심메뉴 추천</title>
+    </head>
+    <body>
+      <h1>${data}</h1>
+    </body>
+  </html>`);
+  res.end();
+})
+// 왜 두번 출력하지?
+
+server.listen(port, (error)=>{
+  if(error){
+    console.error("에러가 발생!",error);
+  } else {
+    console.log("Good Server!");
+    console.log(`http://localhost:${port}/`);
+  }
+});

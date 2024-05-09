@@ -24,13 +24,13 @@ b("7", 7, function(a, b){
   }
 })
 
-const test = b(1,1,function(a,b){
+function c(a, b, callback) {
+  let result = callback(a,b);
+  return result;
+}
+
+const test = c(1,5, function(a, b){
   return a + b;
 })
-// 이거 왜 test에 2라는 값이 할당되지 않았지?
 
-console.log(typeof(test));
-
-console.log(b(1,1,function(a,b){
-  return a + b;
-}))
+console.log(test);
