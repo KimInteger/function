@@ -23,10 +23,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
 
-const a = getRandomInt(0,lunchMenu.length)
-console.log(a);
-
-
 function lunchSelector(array){
   let select = getRandomInt(0,array.length)
   let result = '';
