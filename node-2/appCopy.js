@@ -55,6 +55,8 @@ server.on('request', (request, res)=>{
   </html>
   `);
 });
+// 브라우저의 성능이 유연해서 태그를 정확하게 지정하면 html로 인식하고 
+// html로 출력해버린다.
 
 
 server.listen(8000);
