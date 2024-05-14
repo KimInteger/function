@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px auto;
+}
+#root #menuBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: salmon;
+}
+#root #menuBar div:nth-child(1) {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root #menuBar div:nth-child(1) a {
+  font-size: 1rem;
+  color: white;
+  border: 0px 1px dotted rgb(241, 240, 249);
+  text-decoration: none;
+}
+#root #menuBar div:nth-child(2) {
+  padding-right: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
+}
+#root #menuBar div:nth-child(2) a {
+  font-size: 1rem;
+  color: white;
+  border: 0px 1px dotted rgb(241, 240, 249);
+  text-decoration: none;
+}
+#root #mainCon {
+  display: flex;
+  flex-direction: column;
+}
+#root #mainCon div:nth-child(1) {
+  padding: 10px;
+  width: 80vw;
+  height: 300px;
+}
+#root #mainCon div:nth-child(1) div:nth-child(1) {
+  width: 100%;
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+#root #mainCon div:nth-child(1) div:nth-child(2) {
+  width: 100%;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 5px;
+}
+#root #mainCon div:nth-child(1) div:nth-child(2) span {
+  font-weight: bold;
+}
+#root #mainCon div:nth-child(2) {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(1) {
+  width: 350px;
+  height: 600px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(1) div:nth-child(1) {
+  width: 350px;
+  height: 450px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(1) div:nth-child(1) img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#root #mainCon div:nth-child(2) div:nth-child(1) div:nth-child(2) {
+  width: 350px;
+  height: 150px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 350px;
+  height: 600px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(2) div:nth-child(1) {
+  width: 350px;
+  height: 450px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(2) div:nth-child(1) img {
+  width: 100%;
+  height: 440px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#root #mainCon div:nth-child(2) div:nth-child(2) div:nth-child(2) {
+  width: 350px;
+  height: 150px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(3) {
+  width: 350px;
+  height: 600px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(3) div:nth-child(1) {
+  width: 350px;
+  height: 450px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(3) div:nth-child(1) img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#root #mainCon div:nth-child(2) div:nth-child(3) div:nth-child(2) {
+  width: 350px;
+  height: 150px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(4) {
+  width: 350px;
+  height: 600px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(4) div:nth-child(1) {
+  width: 350px;
+  height: 450px;
+}
+#root #mainCon div:nth-child(2) div:nth-child(4) div:nth-child(1) img {
+  width: 330px;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#root #mainCon div:nth-child(2) div:nth-child(4) div:nth-child(2) {
+  width: 350px;
+  height: 150px;
+}/*# sourceMappingURL=EGstyle.css.map */

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김인티저의 프라모델 추천</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="root">
+    <!-- ! body를 대신해서 문서를 핸들링할 #root를 만들었습니다. -->
+    <div id="menuBar">
+      <!-- ! 메뉴바에 해당하는 부분입니다. 전체가 공용으로 사용합니다. -->
+      <div>
+        <a href="./index.html">Home</a>
+      </div>
+      <!-- ? 둘을 나눈 이유는 사이에 공백을 주고 싶어서 입니다. -->
+      <div>
+        <a href="./entryGrade.html">Entry Grade</a>
+        <a href="./highGrade.html">High Grade</a>
+        <a href="./realGrade.html">Real Grade</a>
+        <a href="./masterGrade.html">Master Grade</a>
+      </div>
+    </div>
+    <div id="mainCon">
+      <!-- ! 메인으로 들어갈 내용을 적는 부분입니다! -->
+      <div>
+        <h2>인티저의 프라모델추천에 당도한것을 환영하오. 나썬이여.</h2>
+        <div>
+          <p>안녕하십니까 이 서버를 연 주인장 김정수라고 합니다.</p>
+          <p>node.js를 배우고 서버를 여는 법을 배운 이후 익숙해졌는지 확인하는 느낌으로 진행하고 있습니다.</p>
+          <p>주제를 선정하는데 어려움을 느꼈습니다만, 순간 머릿속으로 번뜩인 내가 개인적으로 추천하는 프라모델을 내용으로하면 어떨까? 라는 생각으로 시작된 프라모델 추천 사이트입니다.</p>
+          <p>하지만 이 사이트의 주인인 저는 상당히 편향된 프라모델 취미를 가지고 있습니다.</p>
+          <p>혹 건담프라모델 줄여서 건프라(gunpla)이외의 것의 추천을 바라시는 분이시라면 저의 사이트에서 얻어가실 정보는 단 한 톨도 없을 것입니다.</p>
+          <p>그리고 건담프라모델의 역사가 아무래도 저의 나이보다 많기 때문에, 제가 만든 것 중에서만 이야기하기엔 표본이 너무 많습니다.</p>
+          <p>그렇지만 이건 개인적인 추천사이트이니 제가 만든 것 내에서 이야기하도록 하겠습니다.</p>
+          <p>Perfect Grade 줄여서 PG가 포함되지 않은 이유가 바로 이에 해당됩니다.</p>
+          <p>전 아직 PG를 만들어본적이 없습니다. 참으로 안타까운일이 아닐 수 없진 않습니다.</p>
+          <p>아무쪼록 즐겁게 구경하시다가 가시길 바랍니다.</p>
+          <p>※p.s.: 이 사이트의 서버는 언제 닫힐지 모르는 localhost를 사용하고 있습니다. 갑자기 서버가 닫혀도 당황하지마시고 새로운 도파민을 찾아 떠나주시면 감사합니다.</p>
+        </div>
+      </div>
+      <div>
+        <button id="leftmove">&lt;</button>
+        <button id="rightmove">&gt;</button>
+        <div id="EG" class="grade">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="HG" class="grade">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="RG" class="grade">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="MG" class="grade">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

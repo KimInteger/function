@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px auto;
+}
+#root > #menuBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: salmon;
+}
+#root > #menuBar > div:nth-child(1) {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root > #menuBar > div:nth-child(1) > a {
+  font-size: 1rem;
+  color: white;
+  border: 0px 1px dotted rgb(241, 240, 249);
+  text-decoration: none;
+}
+#root > #menuBar > div:nth-child(2) {
+  padding-right: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
+}
+#root > #menuBar > div:nth-child(2) > a {
+  font-size: 1rem;
+  color: white;
+  border: 0px 1px dotted rgb(241, 240, 249);
+  text-decoration: none;
+}
+#root > #mainCon {
+  display: flex;
+  flex-direction: column;
+}
+#root > #mainCon > div:nth-child(1) {
+  padding: 10px;
+  width: 80vw;
+}
+#root > #mainCon > div:nth-child(1) > div:nth-child(1) {
+  width: 100%;
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+#root > #mainCon > div:nth-child(1) > div:nth-child(2) {
+  width: 100%;
+  overflow-x: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 5px;
+}
+#root > #mainCon > div:nth-child(1) > div:nth-child(2) > span {
+  font-weight: bold;
+}
+#root > #mainCon > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#root > #mainCon > div:nth-child(2) > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1200px;
+  height: 45px;
+  background-color: gray;
+  border: 1px solid whitesmoke;
+}
+#root > #mainCon > div:nth-child(2) > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  height: 30px;
+  background-color: lightgray;
+  border: 1px solid whitesmoke;
+}
+#root > #mainCon > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+  width: 200px;
+  text-align: center;
+  border-right: 1px solid whitesmoke;
+}
+#root > #mainCon > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+  width: 1000px;
+  text-align: center;
+  border-left: 1px solid whitesmoke;
+}
+#root > #mainCon > div:nth-child(2) > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#root > #mainCon > div:nth-child(2) > div:nth-child(3) > ul {
+  list-style-type: decimal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}/*# sourceMappingURL=HGstyle.css.map */

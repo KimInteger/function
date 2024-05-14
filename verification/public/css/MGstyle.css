@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 80px auto;
+}
+#root #menuBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: salmon;
+}
+#root #menuBar div:nth-child(1) {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root #menuBar div:nth-child(1) a {
+  font-size: 1rem;
+  color: white;
+  border: 0px 1px dotted rgb(241, 240, 249);
+  text-decoration: none;
+}
+#root #menuBar div:nth-child(2) {
+  padding-right: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
+}
+#root #menuBar div:nth-child(2) a {
+  font-size: 1rem;
+  color: white;
+  border: 0px 1px dotted rgb(241, 240, 249);
+  text-decoration: none;
+}
+#root #mainCon {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=MGstyle.css.map */

@@ -1,0 +1,11 @@
+{
+  "name": "verification",
+  "version": "1.0.0",
+  "description": "Home을 포함한 5가지의 메뉴를 구현해보기, 안에 내용물은 프라모델",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "김정수",
+  "license": "MIT"
+}
