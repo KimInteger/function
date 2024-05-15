@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 // ! 전체적으로 스타일을 관리합니다.
 
@@ -15,54 +14,55 @@ $fontCursive : "Nanum Pen Script", cursive;
   display: grid;
   grid-template-rows: 80px auto;
   background-color: rgb(235,235,235);
-  overflow-x: hidden;
-  #menuBar{
+  >#menuBar{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: salmon;
-    div:nth-child(1){
+    >div:nth-child(1){
       padding-left: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      a{
+      >a{
         font-size: 1rem;
         color : white;
         text-decoration: none;
       }
     }
-    div:nth-child(2){
+    >div:nth-child(2){
       padding-right: 50px;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
       column-gap: 3vw;
-      a{
+      >a{
         font-size: 1rem;
         color : white;
         text-decoration: none;
       }
     }
   }
-  #mainCon{
+  >#mainCon{
     display: flex;
     flex-direction: row;
-    div:nth-child(1){
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    >div:nth-child(1){
       // ! 인사글에 해당되는 컨테이너입니다.
-      width: 45%;
+      width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow-y: visible;
-      h2{
+      >h2{
         padding: 30px 0px;
         text-align: center;
       }
-      div:nth-child(2){
+      >div:nth-child(2){
         width: 80%;
         background-color: rgb(254,255,217);
         // * 인사글의 배경색은 이곳에서 변경할 수 있습니다. 
@@ -71,44 +71,64 @@ $fontCursive : "Nanum Pen Script", cursive;
         row-gap: 10px;
         padding: 20px 15px 0px;
         border-radius: 15px;
-        p {
+        >p {
           font: 100% $fontCursive;
           font-size: 24px;
           overflow-y: visible;
         }
-        p:last-child{
+        >p:last-child{
           padding-top: 100px;
           // * 추신부분을 뜻합니다. 위 글과 간격을 주기 위해서 사용했습니다.
         }
       }
     }
-    div:nth-child(2){
+    >div:nth-child(2){
       // ! 버튼을 이용한 추천 구간 컨테이너입니다.
-      width: 55%;
-      height: 100%;
+      width: 50%;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       overflow-x: hidden;
-      .grade {
+      >div:nth-child(3){
         width: 695px;
-        height: 695px;
-        flex-shrink: 0;
+        height: 800px;
         display: flex;
-        flex-direction: column;
-        border: 1px solid black;
-        div:nth-child(1){
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        >.grade {
           width: 695px;
-          height: 50px;
-        }
-        div:nth-child(2){
-          width : 695px;
-          height: 445px;
-        }
-        div:nth-child(3){
-          width : 695px;
-          height: 200px;
+          height: 800px;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid black;
+          transform: translate(0px);
+          >div:nth-child(1){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 695px;
+            height: 100px;
+            background-color: lightgray;
+          }
+          >div:nth-child(2){
+            width : 695px;
+            height: 550px;
+            overflow-y: hidden;
+            >img{
+              width: 100%;
+              height: 100%
+            };
+          }
+          >div:nth-child(3){
+            width : 695px;
+            height: 150px;
+            background-color: lightgray;
+
+          }
         }
       }
     }
