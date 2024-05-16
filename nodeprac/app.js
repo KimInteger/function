@@ -4,6 +4,8 @@ const fs = require('fs');
 
 const path = require('path');
 
+const qs = require('querystring');
+
 const mimeType = {
   ".html":"text/html; charset=UTF-8",
   ".css":"text/css",
@@ -51,21 +53,61 @@ const server = http.createServer((req,res)=>{
   let ext = fileUtills.getFileExtension(filePath);
 
   let contentType = fileUtills.getContentType(ext);
-
-  fs.readFile(filePath, (err, data)=>{
-    if(err){
-      if(err.code === "ENOENT"){
-        res.writeHead(404, {"Content-Type":"text/html"});
-        res.end("404 : NOT FOUND");
+  if(req.method === 'GET'){
+    fs.readFile(filePath, (err, data)=>{
+      if(err){
+        if(err.code === "ENOENT"){
+          res.writeHead(404, {"Content-Type":"text/html"});
+          res.end("404 : NOT FOUND");
+        } else {
+          res.writeHead(500)
+          res.end(`서버오류 : ${err.code}`);
+        }
       } else {
-        res.writeHead(500)
-        res.end(`서버오류 : ${err.code}`);
+        res.writeHead(200, {"Content-Type": contentType});
+        res.end(data);
       }
-    } else {
-      res.writeHead(200, {"Content-Type": contentType});
-      res.end(data);
+    });
+  }
+
+
+  if(req.method === 'POST'){
+    if(req.url === '/test'){
+      let info = "";
+      req.on('data', (data)=>{
+        info += data;
+      });
+      req.on('end', function(){
+        let setInfo = qs.parse(info);
+        let name = setInfo.name;
+        let content = setInfo.content;
+
+
+        fs.writeFile(`./public/${name}.txt`, content, (err)=>{
+          if(err){
+            console.error(err);
+          }
+        })
+
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.end(`
+        <!DOCTYPE html>
+        <html lang="ko">
+          <head>
+            <meta charset="UTF-8">          
+            <meta name="viewport" content="width=devic-width, initial-scale=1.0">
+            <title>이게뭐람</title>
+          </head>
+          <body>
+            <h1>크아아아악</h1>
+            <h2>${name}</h2>
+            <h2>${content}</h2>
+          </body>
+        </html>
+        `);
+      });
     }
-  });
+  }
 });
 
 server.listen(8080, function(err){
