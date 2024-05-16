@@ -9,32 +9,32 @@
   height: 100vh;
   display: grid;
   grid-template-rows: 80px auto;
-  #menuBar{
+  > #menuBar{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-color: salmon;
-    div:nth-child(1){
+    > div:nth-child(1){
       padding-left: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      a{
+      > a{
         font-size: 1rem;
         color : white;
         border: 0px 1px dotted rgb(241,240,249);
         text-decoration: none;
       }
     }
-    div:nth-child(2){
+    > div:nth-child(2){
       padding-right: 50px;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
       column-gap: 3vw;
-      a{
+      > a{
         font-size: 1rem;
         color : white;
         border: 0px 1px dotted rgb(241,240,249);
@@ -42,8 +42,31 @@
       }
     }
   }
-  #mainCon{
+  > #mainCon{
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    > div:nth-child(1){
+      width: 100%;
+      height: 100%;
+      border: 1px solid black;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2,1fr);
+      > div:nth-child(-n+4) {
+        z-index: 1;
+        > img {
+          width: 100%;
+        }
+      }
+      > #partition{
+        display: none;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+        background-color: rgba(27,27,27,0.6);
+      }
+    }
   }
 }
