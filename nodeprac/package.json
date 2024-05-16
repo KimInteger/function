@@ -1,0 +1,11 @@
+{
+  "name": "nodeprac",
+  "version": "1.0.0",
+  "description": "\"클래스룸 코드 쳐보기\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "김인티저feat.공미남코드",
+  "license": "MIT"
+}
