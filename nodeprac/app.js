@@ -49,6 +49,7 @@ const server = http.createServer((req,res)=>{
   // ! url 확인
   
   let filePath = fileUtills.getFilePath(req.url);
+  console.log(filePath);
 
   let ext = fileUtills.getFileExtension(filePath);
 
