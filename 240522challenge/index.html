@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #menu{
+      width: 1000px;
+      height: 30px;
+      border: 1px solid black;
+      position: absolute;
+    }
+
+    #menu-toggle{
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu"></div>
+  <button id="menu-toggle">햄부거</button>
+  <script src="./script.js"></script>
+</body>
+</html>
