@@ -54,11 +54,8 @@ const server = http.createServer((req,res)=>{
   // ! url 확인
   
   let filePath = fileUtills.getFilePath(req.url);
-<<<<<<< HEAD
   console.log(filePath);
-=======
   // ! 파일 경로를 구한다 1번
->>>>>>> bc5bce0a0a84540d9cf16bc8fbd5c552c548516c
 
   let ext = fileUtills.getFileExtension(filePath);
   // ! 파일경로에서 파일의 확장자를 구분한다 2번
